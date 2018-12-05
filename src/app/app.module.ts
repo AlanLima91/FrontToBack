@@ -8,6 +8,8 @@ import { BasketComponent } from './basket/basket.component';
 import { ProfilComponent } from './profil/profil.component';
 import { AuthComponent } from './auth/auth.component';
 import { SigninComponent } from './signin/signin.component';
+import { SingleMenuComponent } from './single-menu/single-menu.component';
+import { DayComponent } from './day/day.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { SigninComponent } from './signin/signin.component';
     BasketComponent,
     ProfilComponent,
     AuthComponent,
-    SigninComponent
+    SigninComponent,
+    SingleMenuComponent,
+    DayComponent
   ],
   imports: [
     BrowserModule,
