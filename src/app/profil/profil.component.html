@@ -1,3 +1,61 @@
-<p>
-  profil works!
-</p>
+<div class="container-fluid page" id="profil">
+    <div>
+        <div class="row">
+            <div class="col-4 text-white" id="infos">
+                <h2>
+                    Informations
+                </h2>
+                <div class="row" id="personnal">
+                    <div class="col-5" id="pic">
+                        <img src="./img/thug2.jpg" alt="" class="w-100">
+                    </div>
+                    <div class="col-7" id="identity">
+                        <p class="d-block" id="firstName">Nom:</p>
+                        <p class="d-block" id="lastName">Prénom:</p>
+                    </div>
+                </div>
+                <div class="row mt-5" id="logInfos">
+                    <div class="col-12">
+                        <p id="mail">Email:</p>
+                        <button class="btn modify float-right " id="mailModify">
+                            Modifier
+                        </button>
+                        <br><br>
+                        <p id="password">Mot de passe: </p>
+                        <button class="btn modify float-right " id="pwdModify">
+                            Modifier
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-8 p-5 mt-5" id="commandes">
+                <br><br><br>
+                <h2>Mes commandes en cours</h2>
+                <div class="container">
+                    <div class="row order-header d-flex justify-content-between p-2 mb-2">
+                        <p class="d-inline">Choix</p>
+                        <p class="d-inline">Date de récupération</p>
+                        <p class="d-inline">prix</p>
+                        <p class="d-inline">annuler</p>
+                    </div>
+                    <div class="row order d-flex justify-content-between p-2 mb-2" id="order2">
+                        <p class="d-inline">Menu 1</p>
+                        <p class="d-inline"> 14/10/2018 12:30</p>
+                        <p class="d-inline">5.10€</p>
+                        <button class="btn btn-delete">X</button>
+                    </div>
+                    <div class="row order d-flex justify-content-between p-2 mb-2" id="order2">
+                        <p class="d-inline">Menu 1</p>
+                        <p class="d-inline"> 14/10/2018 12:30</p>
+                        <p class="d-inline">5.10€</p>
+                        <button class="btn btn-delete">X</button>
+                    </div>
+                </div>
+            </div>
+            <div class="solde p-4 text-white text-center">
+                <h3>SOLDE:</h3>
+                  <p class="solde-value">25.00€</p>
+            </div>
+        </div>
+    </div>
+</div>
