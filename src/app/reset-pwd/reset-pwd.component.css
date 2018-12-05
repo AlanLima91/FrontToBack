@@ -1,0 +1,130 @@
+.center
+{
+	text-align: center;
+	margin: auto;
+}
+
+.center
+{
+	text-align: center;
+	margin: auto;
+}
+
+/*
+**	Style button standard
+*/
+
+.btn
+{
+	background-color: #FFFFFF;
+	border: 1px solid #c8c8c8;
+	border-radius: 5px;
+	padding: 10px 20px;
+	cursor: pointer;
+}
+
+.btn:hover
+{
+	background-color: #34C765 !important;
+	color: white;
+	border: solid;
+}
+
+/*
+**	Style box (exemple : connexion)
+*/
+
+.boxstyle
+{
+	margin-top: 30px;
+	background-color: #FFFFFF;
+	-webkit-box-shadow: 5px -5px 5px 0px rgba(171,171,171,0.78);
+	-moz-box-shadow: 5px -5px 5px 0px rgba(171,171,171,0.78);
+	box-shadow: 5px -5px 5px 0px rgba(171,171,171,0.78);
+	margin-bottom: 30px;
+	border: 1px solid #e5e5e5;
+}
+
+/*
+**	All function till .a-nav:hover are style for the top Nav
+*/
+
+.hide
+{
+	display: none;
+}
+
+.navbar
+{
+	background-color: #34C765;
+}
+
+.a-nav
+{
+  color: #ffffff;
+  font-weight: bold;
+  display: inline-block;
+  margin-right: 30px;
+  border: solid #fff;
+  padding: 15px;
+  cursor: pointer;
+}
+
+h1.h1-title
+{
+  color: #ffffff;
+  font-size: 25px;
+}
+
+.a-nav:hover
+{
+  color: black;
+  list-style: none;
+  text-decoration: none;
+}
+
+/*
+**	Style for the field
+*/
+
+.field_input
+{
+	border: solid black;
+	width: 80%;
+	height: 45px;
+}
+
+.circle_base
+{
+	border-radius: 100%;
+	width: 200px;
+    height: 200px;
+    background-color: #34C765;
+}
+
+/* **************************** dev-nav **************************** */
+
+.dev-nav
+{
+	background-color: #212121;
+	height: 50px;
+	position: fixed;
+	bottom: 0;
+	line-height: 50px;
+}
+.dev-nav h6
+{
+	line-height: 50px
+}
+.close-nav
+{
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	color: white;
+	background-color: #E53B3B;
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	line-height: 20px;
+}
