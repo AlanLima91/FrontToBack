@@ -1,0 +1,281 @@
+.center
+{
+	text-align: center;
+	margin: auto;
+}
+
+/*
+**	Style button standard
+*/
+
+.btn
+{
+	background-color: #FFFFFF;
+	border: 1px solid #c8c8c8;
+	border-radius: 5px;
+	padding: 10px 20px;
+	cursor: pointer;
+}
+
+.btn:hover
+{
+	background-color: #34C765 !important;
+	color: white;
+	border: solid;
+}
+
+/*
+**	Style box (exemple : connexion)
+*/
+
+.boxstyle
+{
+	margin-top: 30px;
+	background-color: #FFFFFF;
+	-webkit-box-shadow: 5px -5px 5px 0px rgba(171,171,171,0.78);
+	-moz-box-shadow: 5px -5px 5px 0px rgba(171,171,171,0.78);
+	box-shadow: 5px -5px 5px 0px rgba(171,171,171,0.78);
+	margin-bottom: 30px;
+	border: 1px solid #e5e5e5;
+}
+
+/*
+**	Background of the Sign In / Register page
+*/
+
+.clickable
+{
+	color: #34C765;
+	cursor: pointer;
+}
+
+.white_grey_bg
+{
+	background-color: #efefef;
+}
+
+body
+{
+  font-family: 'Poppins', sans-serif;
+}
+
+/*
+**	All function till .a-nav:hover are style for the top Nav
+*/
+
+.hide
+{
+	display: none;
+}
+
+.navbar
+{
+	background-color: #34C765;
+}
+
+.a-nav
+{
+  color: #ffffff;
+  font-weight: bold;
+  display: inline-block;
+  margin-right: 30px;
+  border: solid #fff;
+  padding: 15px;
+  cursor: pointer;
+}
+
+h1.h1-title
+{
+  color: #ffffff;
+  font-size: 25px;
+}
+
+.a-nav:hover
+{
+  color: black;
+  list-style: none;
+  text-decoration: none;
+}
+
+/*
+**	Style for the field
+*/
+
+.field_input
+{
+	border: solid black;
+	width: 80%;
+	height: 45px;
+}
+
+.circle_base
+{
+	border-radius: 100%;
+	width: 200px;
+    height: 200px;
+    background-color: #34C765;
+}
+
+/* ************************ profil ************************ */
+
+#infos
+{
+	height: calc(100vh - 100px);
+	background-color: #34C765;
+}
+
+#infos h2
+{
+	font-weight: 900;
+}
+
+#profil .modify
+{
+	background-color: transparent;
+	border: 5px solid white;
+	color: white;
+	font-weight: 900;
+	border-radius: 0;
+	height: 25px;
+	line-height: 0;
+}
+
+#commandes thead
+{
+	background-color: #34C765;
+}
+
+table
+{
+	border-spacing: 10px;
+}
+
+tbody tr
+{
+	border: 5px solid black;
+}
+
+.order-header
+{
+	height: 50px;
+	background-color: #34C765;
+}
+
+.order
+{
+	border: 5px solid black;
+}
+
+.btn-delete
+{
+	background-color: #E53B3B;
+	color: white;
+	border-radius: 0;
+	font-weight: 900;
+}
+
+.btn-delete:hover
+{
+	background-color: #E53B3B !important;
+	color: black;
+}
+
+.solde
+{
+	position: absolute;
+	right: 4%;
+	top: 16%;
+	background-color: #34C765;
+	border-radius: 500px;
+}
+
+.solde-value
+{
+	font-size: 30px;
+	font-weight: 900;
+}
+
+/************ Menu *****************/
+
+.cote p
+{
+  position: absolute;
+  top: 31%;
+  left: 6%;
+  width: 100%;
+}
+
+.day
+{
+	position: absolute;
+	border: 5px solid;
+	display: none;
+	width: 100%;
+	height: 100%;
+}
+
+.nav-day
+{
+	border: 5px solid;
+}
+
+.menu h2
+{
+	font-weight: 900;
+}
+
+.active
+{
+	background-color: #34C765;
+}
+
+.today
+{
+	border: 5px solid #34C765
+}
+
+.past
+{
+	opacity: 0.7;
+}
+
+/* **************************** dev-nav **************************** */
+
+.dev-nav
+{
+	background-color: #212121;
+	height: 50px;
+	position: fixed;
+	bottom: 0;
+	line-height: 50px;
+}
+.dev-nav h6
+{
+	line-height: 50px
+}
+.close-nav
+{
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	color: white;
+	background-color: #E53B3B;
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	line-height: 20px;
+}
+/************ Adminsitration *****************/
+#list-orders {
+	border: 5px solid black;
+	margin-bottom: 25px;
+}
+.title-bold {
+	font-weight: bold;
+	color: black;
+}
+
+.order-admin {
+	border: 5px solid black;
+	margin-bottom: 25px;
+}
