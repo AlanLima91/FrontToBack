@@ -8,8 +8,8 @@ import { BasketComponent } from './basket/basket.component';
 import { ProfilComponent } from './profil/profil.component';
 import { AuthComponent } from './auth/auth.component';
 import { SigninComponent } from './signin/signin.component';
-import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 import { ResetPwdComponent } from './reset-pwd/reset-pwd.component';
+import { AdministrationComponent } from './administration/administration.component';
 
 @NgModule({
   declarations: [
@@ -19,8 +19,8 @@ import { ResetPwdComponent } from './reset-pwd/reset-pwd.component';
     ProfilComponent,
     AuthComponent,
     SigninComponent,
-    ResetpasswordComponent,
-    ResetPwdComponent
+    ResetPwdComponent,
+    AdministrationComponent
   ],
   imports: [
     BrowserModule,
