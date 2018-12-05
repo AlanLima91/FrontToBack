@@ -1,0 +1,40 @@
+.center
+{
+	text-align: center;
+	margin: auto;
+}
+
+/*
+**	Style button standard
+*/
+
+.btn
+{
+	background-color: #FFFFFF;
+	border: 1px solid #c8c8c8;
+	border-radius: 5px;
+	padding: 10px 20px;
+	cursor: pointer;
+}
+
+.btn:hover
+{
+	background-color: #34C765 !important;
+	color: white;
+	border: solid;
+}
+
+/************ Adminsitration *****************/
+#list-orders {
+	border: 5px solid black;
+	margin-bottom: 25px;
+}
+.title-bold {
+	font-weight: bold;
+	color: black;
+}
+
+.order-admin {
+	border: 5px solid black;
+	margin-bottom: 25px;
+}
