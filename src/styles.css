@@ -1,2 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
 @import '../node_modules/bootstrap/dist/css/bootstrap.css';
+
+.boxstyle
+{
+	margin-top: 30px;
+	background-color: #FFFFFF;
+	-webkit-box-shadow: 5px -5px 5px 0px rgba(171,171,171,0.78);
+	-moz-box-shadow: 5px -5px 5px 0px rgba(171,171,171,0.78);
+	box-shadow: 5px -5px 5px 0px rgba(171,171,171,0.78);
+	margin-bottom: 30px;
+	border: 1px solid #e5e5e5;
+}
+
+.b-5 {
+    border: 5px solid black;
+}
+
+.bg-green {
+    background-color: #34C765
+}
+
+.input
+{
+	border: solid black;
+	width: 80%;
+	height: 45px;
+}
+
+.a-nav
+{
+  color: #ffffff;
+  font-weight: bold;
+  display: inline-block;
+  margin-right: 30px;
+  border: solid #fff;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.a-nav:hover
+{
+  color: black;
+  list-style: none;
+  text-decoration: none;
+}
