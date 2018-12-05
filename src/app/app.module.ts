@@ -7,6 +7,7 @@ import { MenuComponent } from './menu/menu.component';
 import { BasketComponent } from './basket/basket.component';
 import { ProfilComponent } from './profil/profil.component';
 import { AuthComponent } from './auth/auth.component';
+import { SigninComponent } from './signin/signin.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { AuthComponent } from './auth/auth.component';
     MenuComponent,
     BasketComponent,
     ProfilComponent,
-    AuthComponent
+    AuthComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
