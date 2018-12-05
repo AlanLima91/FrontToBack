@@ -1,4 +1,4 @@
-<div class="container page" id="auth">
+
   <div class="row">
     <div class="col-10 p-5 center text-uppercase boxstyle">
       <h1 class="center">Connexion</h1>
@@ -18,13 +18,14 @@
         </div>
       </div>
       <div class="row" style="margin-top: 20px;">
-        <div class="clickable" value="reset_pwd">
+        <a [routerLink]="['/resetPassword']" class="clickable">
           Mot de passe oublié ?
-        </div>
+        </a>
       </div>
     </div>
   </div>
-</div>
+
+<router-outlet></router-outlet>
 
 
   
