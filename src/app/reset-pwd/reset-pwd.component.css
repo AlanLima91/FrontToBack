@@ -4,6 +4,12 @@
 	margin: auto;
 }
 
+.center
+{
+	text-align: center;
+	margin: auto;
+}
+
 /*
 **	Style button standard
 */
@@ -37,26 +43,6 @@
 	box-shadow: 5px -5px 5px 0px rgba(171,171,171,0.78);
 	margin-bottom: 30px;
 	border: 1px solid #e5e5e5;
-}
-
-/*
-**	Background of the Sign In / Register page
-*/
-
-.clickable
-{
-	color: #34C765;
-	cursor: pointer;
-}
-
-.white_grey_bg
-{
-	background-color: #efefef;
-}
-
-body
-{
-  font-family: 'Poppins', sans-serif;
 }
 
 /*
@@ -114,4 +100,31 @@ h1.h1-title
 	width: 200px;
     height: 200px;
     background-color: #34C765;
+}
+
+/* **************************** dev-nav **************************** */
+
+.dev-nav
+{
+	background-color: #212121;
+	height: 50px;
+	position: fixed;
+	bottom: 0;
+	line-height: 50px;
+}
+.dev-nav h6
+{
+	line-height: 50px
+}
+.close-nav
+{
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	color: white;
+	background-color: #E53B3B;
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	line-height: 20px;
 }
