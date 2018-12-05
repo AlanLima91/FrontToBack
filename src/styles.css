@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import '../node_modules/bootstrap/dist/css/bootstrap.css';
 
+
 .boxstyle
 {
 	margin-top: 30px;
@@ -12,6 +13,9 @@
 	border: 1px solid #e5e5e5;
 }
 
+/*
+ *  Style Border Item
+ */
 .b-5 {
     border: 5px solid black;
 }
@@ -43,4 +47,16 @@
   color: black;
   list-style: none;
   text-decoration: none;
+}
+
+/*
+ *  Cercle pour le solde
+ *  utilisé dans basket et profil
+ */
+.circle_base
+{
+	border-radius: 100%;
+	width: 200px;
+    height: 200px;
+    background-color: #34C765;
 }
