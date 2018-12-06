@@ -12,6 +12,7 @@ import { SingleMenuComponent } from './single-menu/single-menu.component';
 import { DayComponent } from './day/day.component';
 import { ResetPwdComponent } from './reset-pwd/reset-pwd.component';
 import { AdministrationComponent } from './administration/administration.component';
+import { ListUserComponent } from './list-user/list-user.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { AdministrationComponent } from './administration/administration.compone
     DayComponent,
     ResetPwdComponent,
     AdministrationComponent,
+    ListUserComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,11 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 @import '../node_modules/bootstrap/dist/css/bootstrap.css';
 
-
+/* 
+ *  Style for every box (inscription/connexion for example)
+ */
 .boxstyle
 {
 	margin-top: 30px;
-	/* background-color: #FFFFFF; */
+	background-color: #FFFFFF;
 	-webkit-box-shadow: 5px -5px 5px 0px rgba(171,171,171,0.78);
 	-moz-box-shadow: 5px -5px 5px 0px rgba(171,171,171,0.78);
 	box-shadow: 5px -5px 5px 0px rgba(171,171,171,0.78);
@@ -16,14 +18,22 @@
 /*
  *  Style Border Item
  */
-.b-5 {
+.b-5
+{
     border: 5px solid black;
 }
 
-.bg-green {
+/* 
+ *  Background Green
+ */
+.bg-green
+{
     background-color: #34C765
 }
 
+/* 
+ *  Style for every input field
+ */
 .input
 {
 	border: solid black;
@@ -59,4 +69,50 @@
 	width: 200px;
     height: 200px;
     background-color: #34C765;
+}
+
+/* 
+ *  Allowed to center every element
+ */
+.center
+{
+	text-align: center;
+	margin: auto;
+}
+
+/*
+ *	Style button-delete/cancel/annul standard
+ */
+.btn-delete
+{
+	background-color: #FFFFFF;
+	border: 1px solid #c8c8c8;
+	border-radius: 5px;
+	padding: 10px 20px;
+	cursor: pointer;
+}
+.btn-delete:hover
+{
+	background-color: rgb(199, 52, 52) !important;
+	color: white;
+	border: solid;
+}
+
+/*
+ *	Style button-success/ok standard
+ */
+.btn
+{
+	background-color: #FFFFFF;
+	border: 1px solid #c8c8c8;
+	border-radius: 5px;
+	padding: 10px 20px;
+	cursor: pointer;
+	color: black;
+}
+.btn:hover
+{
+	background-color: #34C765 !important;
+	color: white;
+	border: solid;
 }
