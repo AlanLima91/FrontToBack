@@ -11,7 +11,7 @@ import { AdministrationComponent } from './administration/administration.compone
 const routes: Routes = [
   { path: 'accueil', component: MenuComponent},
   { path: 'panier', component: BasketComponent},
-  { path: 'auth', component: AuthComponent},
+  { path: 'inscription', component: AuthComponent},
   { path: 'signin', component: SigninComponent},
   { path: 'profil', component: ProfilComponent},
   { path: 'resetPassword', component: ResetPwdComponent },
