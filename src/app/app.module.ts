@@ -8,6 +8,8 @@ import { BasketComponent } from './basket/basket.component';
 import { ProfilComponent } from './profil/profil.component';
 import { AuthComponent } from './auth/auth.component';
 import { SigninComponent } from './signin/signin.component';
+import { SingleMenuComponent } from './single-menu/single-menu.component';
+import { DayComponent } from './day/day.component';
 import { ResetPwdComponent } from './reset-pwd/reset-pwd.component';
 import { AdministrationComponent } from './administration/administration.component';
 
@@ -19,12 +21,14 @@ import { AdministrationComponent } from './administration/administration.compone
     ProfilComponent,
     AuthComponent,
     SigninComponent,
+    SingleMenuComponent,
+    DayComponent,
     ResetPwdComponent,
-    AdministrationComponent
+    AdministrationComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
