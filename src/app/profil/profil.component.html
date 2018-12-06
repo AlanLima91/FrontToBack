@@ -1,57 +1,62 @@
+<!-- Col left with the informations -->
 <div class="row">
-            <div class="col-4 text-white" id="infos">
-                <h2>
-                    Informations
-                </h2>
-                <div class="row" id="personnal">
-                    <div class="col-5" id="pic">
-                        <img src="./img/thug2.jpg" alt="" class="w-100">
-                    </div>
-                    <div class="col-7" id="identity">
-                        <p class="d-block" id="firstName">Nom:</p>
-                        <p class="d-block" id="lastName">Prénom:</p>
-                    </div>
-                </div>
-                <div class="row mt-5" id="logInfos">
-                    <div class="col-12">
-                        <p id="mail">Email:</p>
-                        <button class="btn modify float-right " id="mailModify">
-                            Modifier
-                        </button>
-                        <br><br>
-                        <p id="password">Mot de passe: </p>
-                        <button class="btn modify float-right " id="pwdModify">
-                            Modifier
-                        </button>
-                    </div>
-                </div>
+    <div class="col-4 text-white bg-green p-0 b-5" id="infos">
+        <div class="container" >
+            <h2 class="text-center p-5">
+                Informations
+            </h2>
+            <div class="row p-3 text-center">
+                <h3 class="col-6 p-3" id="firstName">Gwenn</h3>
+                <h3 class="col-6 p-3 text-uppercase" id="lastName">Linski</h3>
             </div>
-            <div class="col-8 p-5 mt-5" id="commandes">
-                <br><br><br>
-                <h2>Mes commandes en cours</h2>
-                <div class="container">
-                    <div class="row order-header d-flex justify-content-between p-2 mb-2">
-                        <p class="d-inline">Choix</p>
-                        <p class="d-inline">Date de récupération</p>
-                        <p class="d-inline">prix</p>
-                        <p class="d-inline">annuler</p>
-                    </div>
-                    <div class="row order d-flex justify-content-between p-2 mb-2" id="order2">
-                        <p class="d-inline">Menu 1</p>
-                        <p class="d-inline"> 14/10/2018 12:30</p>
-                        <p class="d-inline">5.10€</p>
-                        <button class="btn btn-delete">X</button>
-                    </div>
-                    <div class="row order d-flex justify-content-between p-2 mb-2" id="order2">
-                        <p class="d-inline">Menu 1</p>
-                        <p class="d-inline"> 14/10/2018 12:30</p>
-                        <p class="d-inline">5.10€</p>
-                        <button class="btn btn-delete">X</button>
-                    </div>
+            <div class="row p-3">
+                <div class="p-3 col-8">
+                    <input type="email" id="email" placeholder="gwenn_linsky@example.fr" class="input w-100">
                 </div>
-            </div>
-            <div class="solde p-4 text-white text-center">
-                <h3>SOLDE:</h3>
-                  <p class="solde-value">25.00€</p>
+                <div class="p-3 col-4">
+                    <button class="btn modify" id="mailModify">Modifier</button>
+                </div>
+                <div class="p-3 col-8">
+                    <input type="password" id="password" placeholder="Mot de passe" class="input w-100">
+                </div>
+                <div class="p-3 col-4">
+                    <button class="btn modify" id="pwdModify">Modifier</button>
+                </div>
             </div>
         </div>
+    </div>
+
+    <!-- left of the page with older order -->
+    <div class="col-8 p-5" id="commandes">
+        <br><br><br>
+        <div class="row">
+            <h1 class="col-8 p-5">
+                Mes commandes en cours
+            </h1>
+            <div class="p-5 circle_base text-white bg-green">
+                <h1>Solde</h1>
+                <p class="text-center">25.00€</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row order-header d-flex justify-content-around p-3 flex-row center boxstyle bg-green">
+                <b class="text-white">Choix</b>
+                <b class="text-white">Date de récupération</b>
+                <b class="text-white">prix</b>
+                <b class="text-white">annuler</b>
+            </div>
+            <div class="row order d-flex justify-content-between p-2 mb-2" id="order2">
+                <p class="d-inline">Menu 1</p>
+                <p class="d-inline"> 14/10/2018 12:30</p>
+                <p class="d-inline">5.10€</p>
+                <button class="btn btn-delete">X</button>
+            </div>
+            <div class="row order d-flex justify-content-between p-2 mb-2" id="order2">
+                <p class="d-inline">Menu 1</p>
+                <p class="d-inline"> 14/10/2018 12:30</p>
+                <p class="d-inline">5.10€</p>
+                <button class="btn btn-delete">X</button>
+            </div>
+        </div>
+    </div>
+</div>
