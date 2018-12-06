@@ -13,6 +13,7 @@ import { DayComponent } from './day/day.component';
 import { ResetPwdComponent } from './reset-pwd/reset-pwd.component';
 import { AdministrationComponent } from './administration/administration.component';
 import { ListUserComponent } from './list-user/list-user.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,8 @@ import { ListUserComponent } from './list-user/list-user.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

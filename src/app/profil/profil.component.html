@@ -1,12 +1,12 @@
 <!-- Col left with the informations -->
 <div class="row">
-    <div class="col-4 text-white bg-green p-0 b-5" id="infos">
+    <div class="col-4 text-white bg-green p-0" id="infos">
         <div class="container" >
             <h2 class="text-center p-5">
                 Informations
             </h2>
             <div class="row p-3 text-center">
-                <h3 class="col-6 p-3" id="firstName">Gwenn</h3>
+                <h3 class="col-6 p-3" id="firstName">{{ user.firstname }}</h3>
                 <h3 class="col-6 p-3 text-uppercase" id="lastName">Linski</h3>
             </div>
             <div class="row p-3">
@@ -26,7 +26,7 @@
         </div>
     </div>
 
-    <!-- left of the page with older order -->
+    <!-- right of the page with order in progress -->
     <div class="col-8 p-5" id="commandes">
         <br><br><br>
         <div class="row">
@@ -39,24 +39,20 @@
             </div>
         </div>
         <div class="container">
-            <div class="row order-header d-flex justify-content-around p-3 flex-row center boxstyle bg-green">
+            <div class="row order-header d-flex justify-content-around p-3 flex-row boxstyle bg-green">
                 <b class="text-white">Choix</b>
                 <b class="text-white">Date de récupération</b>
                 <b class="text-white">prix</b>
                 <b class="text-white">annuler</b>
             </div>
+            <!-- Boucle sur les commandes en cours de l'utilisateur -->
             <div class="row order d-flex justify-content-between p-2 mb-2" id="order2">
                 <p class="d-inline">Menu 1</p>
                 <p class="d-inline"> 14/10/2018 12:30</p>
                 <p class="d-inline">5.10€</p>
-                <button class="btn btn-delete">X</button>
+                <button class="btn-delete">X</button>
             </div>
-            <div class="row order d-flex justify-content-between p-2 mb-2" id="order2">
-                <p class="d-inline">Menu 1</p>
-                <p class="d-inline"> 14/10/2018 12:30</p>
-                <p class="d-inline">5.10€</p>
-                <button class="btn btn-delete">X</button>
-            </div>
+            <!-- fin de boucle -->
         </div>
     </div>
 </div>
