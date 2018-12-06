@@ -7,15 +7,17 @@ import { ProfilComponent } from './profil/profil.component';
 import { SigninComponent } from './signin/signin.component';
 import { ResetPwdComponent } from './reset-pwd/reset-pwd.component';
 import { AdministrationComponent } from './administration/administration.component';
+import { ListUserComponent } from './list-user/list-user.component';
 
 const routes: Routes = [
   { path: 'accueil', component: MenuComponent},
   { path: 'panier', component: BasketComponent},
   { path: 'inscription', component: AuthComponent},
-  { path: 'signin', component: SigninComponent},
+  { path: 'connexion', component: SigninComponent},
   { path: 'profil', component: ProfilComponent},
   { path: 'resetPassword', component: ResetPwdComponent },
   { path: 'administration', component: AdministrationComponent },
+  { path: 'administration/listeUtilisateur', component: ListUserComponent },
 ];
 
 @NgModule({

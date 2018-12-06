@@ -1,0 +1,46 @@
+<!-- Comme pour les commandes, on boucle sur chaque objet User -->
+<div class="container b-5 p-5 mt-5 boxstyle w-100">
+    <h2 class="center title-bold text-uppercase p-3">Liste des utilisateurs</h2>
+    <div class="row boxstyle justify-content-around center w-100 boxstyle bg-green p-2 mb-3">
+        <b class="text-white col-2">NOM</b>
+        <b class="text-white col-2">Prenom</b>
+        <b class="text-white col-3">Email</b>
+        <b class="text-white col-2">Solde</b>
+        <b class="text-white col-2">Ajouter|Retirer</b>
+    </div>
+    <!-- La row marque le début de la boucle -->
+    <div class="row mb-3 boxstyle justify-content-around center w-100">
+        <b class="col-2 text-uppercase">
+            Linski
+            <!-- Nom de famille de l'utilisateur -->
+        </b>
+        <b class="col-2">
+            Gwenn
+            <!-- Prénom de l'utilisateur -->
+        </b>
+        <p class="col-4 text-lowercase">
+            Gwenn_linsky@example.fr
+            <!-- email de l'utilisateur -->
+        </p>
+        <p class="col-2">
+            25.00€
+            <!-- Solde sur le compte de l'utilisateur -->
+        </p>
+        <button class="col-1 btn">
+            +
+            <!-- Créer une fonction pour ajouter de l'argent sur le compte de l'utilisateur -->
+        </button>
+        <button class="col-1 btn-delete">
+            -
+            <!-- Créer une fonction pour retirer de l'argent sur le compte de l'utilisateur -->
+        </button>
+    </div>
+    <!-- La boucle est fini à partir d'ici -->
+</div>
+
+<div class="row w-100">
+    <a [routerLink]="['/administration']" class="col-12 btn flex-row">
+        Liste des Commandes
+    </a>
+</div>
+<router-outlet></router-outlet>
