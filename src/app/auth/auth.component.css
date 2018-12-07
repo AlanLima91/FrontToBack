@@ -24,20 +24,6 @@
 	border: solid;
 }
 
-/*
-**	Style box (exemple : connexion)
-*/
-
-.boxstyle
-{
-	margin-top: 30px;
-	background-color: #FFFFFF;
-	-webkit-box-shadow: 5px -5px 5px 0px rgba(171,171,171,0.78);
-	-moz-box-shadow: 5px -5px 5px 0px rgba(171,171,171,0.78);
-	box-shadow: 5px -5px 5px 0px rgba(171,171,171,0.78);
-	margin-bottom: 30px;
-	border: 1px solid #e5e5e5;
-}
 
 /*
 **	Background of the Sign In / Register page
