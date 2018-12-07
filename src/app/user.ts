@@ -8,7 +8,7 @@ export class User
     public password    :string;
     public solde       :number;
     public order       :Order|void;
-
+    
     constructor(name:string, firstname:string, email:string, password:string, solde:number, order :Order|void)
     {
         this.name = name;
