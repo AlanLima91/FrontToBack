@@ -19,7 +19,9 @@ export class ProfilComponent implements OnInit
 
   ngOnInit()
   {
-    this.user = new User("123","Test", "gwenn_linski@example.fr", "pasword", 25.50, null);
+    this.user = this.allService.getUserByKey("-LT7EJHxqq4Zycn7lX36");
+    console.log(this.user);
+    console.log(this.allService.getUserByKey("-LT7EJHxqq4Zycn7lX36"));
 
     // function use to add the user (this.user)
     // this.allService.addUser(this.user).subscribe();

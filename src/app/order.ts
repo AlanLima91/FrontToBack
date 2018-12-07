@@ -1,15 +1,20 @@
 import { User } from './user';
+import { Type } from '@angular/compiler';
+import { Menu } from './menu';
 
 export class Order
 {
-    private menu    :string;
-    private user    :User|void;
-    private price   :number;
+    public menu     :Menu|void;
+    public user     :User|void;
+    public price    :number;
+    public hour     :Type|void
 
-    constructor(menu:string, user:User, price:number)
+
+    constructor(menu:Menu, user:User, price:number, hour:Type)
     {
-        this.menu = menu;
-        this.user = user;
-        this.price = price;
+        this.menu   = menu;
+        this.user   = user;
+        this.price  = price;
+        this.hour   = hour;
     }
 }

@@ -1,15 +1,37 @@
 import { Component, OnInit } from '@angular/core';
+import { Order } from '../order';
+import { AllService } from '../services/all.service';
 
 @Component({
   selector: 'app-administration',
   templateUrl: './administration.component.html',
   styleUrls: ['./administration.component.css']
 })
-export class AdministrationComponent implements OnInit {
+export class AdministrationComponent implements OnInit
+{
+  list:Order[];
+  order:Order;
+  constructor(private allService:AllService) { }
 
-  constructor() { }
-
-  ngOnInit() {
+  ngOnInit()
+  {
+    this.getOrders();
+    this.order = new Order(
+      null, 
+      this.allService.getUserByKey("-LT7EJHxqq4Zycn7lX36")[0], 
+      5, 
+      null,
+    );
+    this.allService.addOrder(this.order).subscribe();
+    console.log()
   }
 
+  getOrders()
+  {
+    this.allService.getOrders().subscribe(data =>
+      {
+        this.list = Object.values(data);
+        console.log(this.list);
+      });
+  }
 }

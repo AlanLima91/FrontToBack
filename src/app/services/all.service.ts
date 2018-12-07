@@ -32,8 +32,21 @@ export class AllService
   }
 
   /**
-   *  Read all Users 
-   *  return a table of user
+   *  Read all Users and look for one user
+   *  return a user
+   */
+  getUserByKey(key: string): Observable<User[]>
+  {
+    return this.http.get<User[]>('https://fronttoback-2c84a.firebaseio.com/users/'+key+'.json')
+    .pipe(
+      tap(data => data),
+      catchError(this.handleError('getUserByKey', []))
+    );
+  }
+
+  /**
+   *  Read all Menu 
+   *  return a table of menu
    */
   getMenus():Observable<Menu[]>
   {
@@ -95,7 +108,7 @@ export class AllService
   {
     let url = `https://fronttoback-2c84a.firebaseio.com/orders.json`;
     return this.http.post<Order>(url, order, {responseType: 'json'}).pipe(
-        tap((product: Order) => console.log('beer added')),
+        tap((product: Order) => console.log('order Added')),
         catchError(this.handleError<Order>('addBeer')),
       );
   }

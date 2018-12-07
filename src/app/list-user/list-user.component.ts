@@ -36,12 +36,14 @@ export class ListUserComponent implements OnInit
         // }
       });
   }
-  increase()
+  
+  increase(i:number)
   {
-
+    let solde = this.list[i].solde;
+    
   }
 
-  decrease()
+  decrease(i:number)
   {
 
   }
