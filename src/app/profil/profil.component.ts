@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AllService } from '../services/all.service';
 import { User } from "../user";
 import { Order } from "../order";
 
@@ -11,16 +12,17 @@ export class ProfilComponent implements OnInit
 {
   user:User;
 
-  constructor()
+  constructor(private allService:AllService)
   {
 
   }
 
   ngOnInit()
   {
-    this.user = new User("Linski","Gwenn", "gwenn_linski@example.fr", "pasword", 25.50, null);
-    console.log(Object.values(this.user));
-    
+    this.user = new User("123","Test", "gwenn_linski@example.fr", "pasword", 25.50, null);
+
+    // function use to add the user (this.user)
+    // this.allService.addUser(this.user).subscribe();
   }
 
 }

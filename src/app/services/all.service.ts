@@ -1,10 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import {throwError as observableThrowError,  Observable } from 'rxjs';
+<<<<<<< HEAD:src/app/services/all.service.ts
 import { tap, catchError, filter } from 'rxjs/operators';
 import { Order } from '../order';
 import { User } from '../user';
 import { Menu } from '../menu';
+=======
+import { tap, catchError } from 'rxjs/operators';
+import { Order } from '../order';
+import { User } from '../user';
+import { Menu } from '../menu';
+
+>>>>>>> fb11863aa67f0829865771c9c1a32dc9a6d65173:src/app/services/all.service.ts
 
 @Injectable({
   providedIn: 'root'
@@ -68,14 +76,14 @@ export class AllService
   {
     let url = `https://fronttoback-2c84a.firebaseio.com/users.json`;
     return this.http.post<User>(url, user, {responseType: 'json'}).pipe(
-        tap((product: User) => console.log('beer added')),
+        tap((product: User) => console.log('User Added')),
         catchError(this.handleError<User>('addBeer')),
       );
   }
 
   /**
    *  Add a new User to the table
-   *  @param Menu
+   *  @param menu
    */
   addMenu(menu: Menu): Observable<Menu>
   {

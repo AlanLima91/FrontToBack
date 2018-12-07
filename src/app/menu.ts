@@ -1,4 +1,5 @@
-export class Menu {
+export class Menu
+{
     private day: string;
     private entree: string;
     private plat: string;
