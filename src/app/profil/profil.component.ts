@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AllService } from '../all.service';
+import { AllService } from '../services/all.service';
 import { User } from "../user";
 import { Order } from "../order";
 
@@ -21,7 +21,8 @@ export class ProfilComponent implements OnInit
   {
     this.user = new User("123","Test", "gwenn_linski@example.fr", "pasword", 25.50, null);
 
-    this.allService.addUser(this.user).subscribe();
+    // function use to add the user (this.user)
+    // this.allService.addUser(this.user).subscribe();
   }
 
 }
