@@ -18,7 +18,7 @@ export class ProfilComponent implements OnInit
 
   ngOnInit()
   {
-    this.user = new User("Linski","Gwenn", "gwenn_linski@example.fr", 25.50, null);
+    this.user = new User("Linski","Gwenn", "gwenn_linski@example.fr", "pasword", 25.50, null);
     console.log(Object.values(this.user));
     
   }

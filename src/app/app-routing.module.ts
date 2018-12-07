@@ -10,7 +10,7 @@ import { AdministrationComponent } from './administration/administration.compone
 import { ListUserComponent } from './list-user/list-user.component';
 
 const routes: Routes = [
-  { path: 'accueil', component: MenuComponent},
+  { path: '', component: MenuComponent},
   { path: 'panier', component: BasketComponent},
   { path: 'inscription', component: AuthComponent},
   { path: 'connexion', component: SigninComponent},
