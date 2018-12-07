@@ -52,7 +52,7 @@ export class AllService
   {
     let url = `https://fronttoback-2c84a.firebaseio.com/users.json`;
     return this.http.post<User>(url, user, {responseType: 'json'}).pipe(
-        tap((product: User) => console.log('beer added')),
+        tap((product: User) => console.log('User Added')),
         catchError(this.handleError<User>('addBeer')),
       );
   }

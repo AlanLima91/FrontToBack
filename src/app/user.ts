@@ -2,12 +2,12 @@ import { Order } from './order';
 
 export class User
 {
-    private name        :string;
-    private firstname   :string;
-    private email       :string;
-    private password    :string;
-    private solde       :number;
-    private order       :Order|void;
+    public name        :string;
+    public firstname   :string;
+    public email       :string;
+    public password    :string;
+    public solde       :number;
+    public order       :Order|void;
 
     constructor(name:string, firstname:string, email:string, password:string, solde:number, order :Order|void)
     {
