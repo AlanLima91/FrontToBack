@@ -4,6 +4,7 @@ import {throwError as observableThrowError,  Observable } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
 import { Order } from './order';
 import { User } from './user';
+import { Menu } from './menu';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +27,21 @@ export class AllService
             data
           }),
           catchError(this.handleError('getUsers', []))
+        );
+  }
+
+  /**
+   *  Read all Users 
+   *  return a table of user
+   */
+  getMenus():Observable<Menu[]>
+  {
+    return this.http.get<Menu[]>('https://beers-cf53e.firebaseio.com/menus.json')
+        .pipe(
+          tap(data => {
+            data
+          }),
+          catchError(this.handleError('getMenus', []))
         );
   }
 
@@ -54,6 +70,19 @@ export class AllService
     return this.http.post<User>(url, user, {responseType: 'json'}).pipe(
         tap((product: User) => console.log('beer added')),
         catchError(this.handleError<User>('addBeer')),
+      );
+  }
+
+  /**
+   *  Add a new User to the table
+   *  @param Menu
+   */
+  addMenu(Menu: Menu): Observable<Menu>
+  {
+    let url = `https://fronttoback-2c84a.firebaseio.com/menus.json`;
+    return this.http.post<Menu>(url, menu, {responseType: 'json'}).pipe(
+        tap((product: Menu) => console.log('menu added')),
+        catchError(this.handleError<Menu>('addMenu')),
       );
   }
 

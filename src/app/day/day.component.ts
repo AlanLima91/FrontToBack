@@ -13,8 +13,8 @@ export class DayComponent implements OnInit {
   currentDate: Date = new Date();
   currentDay: number = this.currentDate.getDay();
   currentDayInLetter: string = this.days[this.currentDay - 1];
-  activeDay: string = "Jeudi";
-  // activeDay: string = this.currentDayInLetter;
+  // activeDay: string = "Jeudi";
+  activeDay: string = this.currentDayInLetter;
   activeDayInNumber: number =  this.days.indexOf(this.activeDay);
 
   constructor() { }
