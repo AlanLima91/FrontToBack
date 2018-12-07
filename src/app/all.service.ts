@@ -21,7 +21,7 @@ export class AllService
    */
   getUsers():Observable<User[]>
   {
-    return this.http.get<User[]>('https://beers-cf53e.firebaseio.com/users.json')
+    return this.http.get<User[]>('https://fronttoback-2c84a.firebaseio.com/users.json')
         .pipe(
           tap(data => {
             data

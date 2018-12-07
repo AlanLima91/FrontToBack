@@ -7,17 +7,17 @@
             </h2>
             <div class="row p-3 text-center">
                 <h3 class="col-6 p-3" id="firstName">{{ user.firstname }}</h3>
-                <h3 class="col-6 p-3 text-uppercase" id="lastName">Linski</h3>
+                <h3 class="col-6 p-3 text-uppercase" id="lastName">{{ user.name }}</h3>
             </div>
             <div class="row p-3">
                 <div class="p-3 col-8">
-                    <input type="email" id="email" placeholder="gwenn_linsky@example.fr" class="input w-100">
+                    <input type="email" id="email" [ngModel]="user?.email" class="input w-100">
                 </div>
                 <div class="p-3 col-4">
                     <button class="btn modify" id="mailModify">Modifier</button>
                 </div>
                 <div class="p-3 col-8">
-                    <input type="password" id="password" placeholder="Mot de passe" class="input w-100">
+                    <input type="password" id="password" [ngModel]="user?.password" class="input w-100">
                 </div>
                 <div class="p-3 col-4">
                     <button class="btn modify" id="pwdModify">Modifier</button>
