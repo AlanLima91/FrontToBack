@@ -6,7 +6,7 @@
  */
 .boxstyle
 {
-	margin-top: 30px;
+	margin-top: 30px !important;
 	background-color: #FFFFFF;
 	-webkit-box-shadow: 5px -5px 5px 0px rgba(171,171,171,0.78);
 	-moz-box-shadow: 5px -5px 5px 0px rgba(171,171,171,0.78);
