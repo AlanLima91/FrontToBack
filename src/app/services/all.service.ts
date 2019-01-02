@@ -126,7 +126,6 @@ export class AllService
         catchError(this.handleError<Order>('addBeer')),
       );
   }
-
   
     //** Read menus by day */
     getMenuByDay(day: string): Observable<Menu[]>{

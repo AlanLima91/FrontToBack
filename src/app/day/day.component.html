@@ -11,6 +11,8 @@
         <div 
           class="b-5 p-3" 
           [ngClass]="{'today': activeDay === currentDayInLetter, 'past': activeDayInNumber < currentDay-1 }">
+          
+        <button class="btn-primary test">ajouter</button>
           <h2 class="text-center"> {{ activeDay }} </h2>
           <div class="row">
             <app-single-menu 
