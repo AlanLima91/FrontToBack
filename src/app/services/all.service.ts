@@ -15,6 +15,7 @@ export class AllService
   {
 
   }
+  
   /**
    *  Read all Users 
    *  return a table of user
@@ -31,16 +32,18 @@ export class AllService
   }
 
   /**
-   *  Read all Users and look for one user
-   *  return a user
+   *  Read all Orders
+   *  return a table of order
    */
-  getUserByKey(key: string): Observable<User[]>
+  getOrders():Observable<Order[]>
   {
-    return this.http.get<User[]>('https://fronttoback-2c84a.firebaseio.com/users/'+key+'.json')
-    .pipe(
-      tap(data => data),
-      catchError(this.handleError('getUserByKey', []))
-    );
+    return this.http.get<Order[]>('https://fronttoback-2c84a.firebaseio.com/orders.json')
+        .pipe(
+          tap(data => {
+            data
+          }),
+          catchError(this.handleError('getOrders', []))
+        );
   }
 
   /**
@@ -59,6 +62,19 @@ export class AllService
   }
 
   /**
+   *  Read all Users and look for one user
+   *  return a user
+   */
+  getUserByKey(key: string): Observable<User[]>
+  {
+    return this.http.get<User[]>('https://fronttoback-2c84a.firebaseio.com/users/'+key+'.json')
+    .pipe(
+      tap(data => data),
+      catchError(this.handleError('getUserByKey', []))
+    );
+  }
+
+  /**
    * Filter existing menus by day
    * return a table of menus
    */
@@ -71,20 +87,6 @@ export class AllService
     
   }
 
-  /**
-   *  Read all Orders
-   *  return a table of order
-   */
-  getOrders():Observable<Order[]>
-  {
-    return this.http.get<Order[]>('https://fronttoback-2c84a.firebaseio.com/orders.json')
-        .pipe(
-          tap(data => {
-            data
-          }),
-          catchError(this.handleError('getOrders', []))
-        );
-  }
 
   /**
    *  Add a new User to the table
@@ -124,6 +126,12 @@ export class AllService
         catchError(this.handleError<Order>('addBeer')),
       );
   }
+
+  
+    //** Read menus by day */
+    getMenuByDay(day: string): Observable<Menu[]>{
+      return this.http.get<Menu[]>('https://fronttoback-2c84a.firebaseio.com/menus.json?orderBy=\"day\"&equalTo=\"'+day+'\"');
+    }
 
 
   /**

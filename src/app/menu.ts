@@ -1,13 +1,15 @@
 export class Menu
 {
-    private day: string;
-    private entree: string;
-    private plat: string;
-    private dessert: string;
-    private price: number;
+    public name: string;
+    public day: string;
+    public entree: string;
+    public plat: string;
+    public dessert: string;
+    public price: number;
 
     constructor(day: string, entree: string, plat: string, dessert: string, price: number)
     {
+        this.name = name;
         this.day = day;
         this.entree = entree;
         this.plat = plat;

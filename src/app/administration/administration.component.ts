@@ -10,25 +10,25 @@ import { User } from '../user';
 })
 export class AdministrationComponent implements OnInit
 {
-  list:Order[];
+  list:any[] = [];
 
   constructor(private allService:AllService) { }
 
   ngOnInit()
   {
     this.getOrders();
-    // this.allService.getUserByKey("-LT7EJHxqq4Zycn7lX36").subscribe(data => {
-    //   let user = Object.values(data);
-    // });
-    // this.allService.addOrder(this.order).subscribe();
   }
 
   getOrders()
   {
     this.allService.getOrders().subscribe(data =>
       {
-        this.list = Object.values(data);
-        console.log(this.list);
+        let cle = Object.keys(data);
+        let donnees = Object.values(data);
+        for(let i = 0; i < cle.length; i++)
+        {
+          this.list.push({key: cle[i], values:donnees[i]});
+        }
       });
   }
 }
