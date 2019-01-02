@@ -3,13 +3,16 @@
 
   <div class="container">
     <div class="row h-100">
-      <app-day class="col-8 h-100 d-inline-block" ></app-day>
+      <app-day 
+        class="col-8 h-100 d-inline-block"
+        [day]="currentDayInLetter"
+        ></app-day>
       <div class="col-4">
-        <div class="col b-5 m-1 p-2 text-center font-weight-bold " id="1">LUNDI</div>
-        <div class="col b-5 m-1 p-2 text-center font-weight-bold" id="2">MARDI</div>
-        <div class="col b-5 m-1 p-2 text-center font-weight-bold" id="3">MERCREDI</div>
-        <div class="col b-5 m-1 p-2 text-center font-weight-bold" id="4">JEUDI</div>
-        <div class="col b-5 m-1 p-2 text-center font-weight-bold" id="5">VENDREDI</div>
+        <div class="col b-5 m-1 p-2 text-center font-weight-bold " id="1" (click)="changeDay(0)">LUNDI</div>
+        <div class="col b-5 m-1 p-2 text-center font-weight-bold" id="2" (click)="changeDay(1)">MARDI</div>
+        <div class="col b-5 m-1 p-2 text-center font-weight-bold" id="3" (click)="changeDay(2)">MERCREDI</div>
+        <div class="col b-5 m-1 p-2 text-center font-weight-bold" id="4" (click)="changeDay(3)">JEUDI</div>
+        <div class="col b-5 m-1 p-2 text-center font-weight-bold" id="5" (click)="changeDay(4)">VENDREDI</div>
       </div>
     </div>
   </div>

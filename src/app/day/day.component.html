@@ -1,4 +1,12 @@
-<div class="b-5" [ngClass]="{'today': activeDay === currentDayInLetter, 'past': activeDayInNumber < currentDay-1 }">
-  <h2 class="text-center"> {{ activeDay }} </h2>
-  <app-single-menu *ngFor="let menu of menus"></app-single-menu>
+<div 
+  class="b-5 p-3" 
+  [ngClass]="{'today': activeDay === currentDayInLetter, 'past': activeDayInNumber < currentDay-1 }">
+  <h2 class="text-center"> {{ day }} </h2>
+  <div class="row">
+    <app-single-menu 
+      class="col-4 text-center" 
+      *ngFor="let menu of menus"
+      [menu]= "menu">
+    </app-single-menu>
+  </div>
 </div>

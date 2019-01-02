@@ -87,6 +87,7 @@ export class AllService
     
   }
 
+
   /**
    *  Add a new User to the table
    *  @param User
@@ -125,6 +126,12 @@ export class AllService
         catchError(this.handleError<Order>('addBeer')),
       );
   }
+
+  
+    //** Read menus by day */
+    getMenuByDay(day: string): Observable<Menu[]>{
+      return this.http.get<Menu[]>('https://fronttoback-2c84a.firebaseio.com/menus.json?orderBy=\"day\"&equalTo=\"'+day+'\"');
+    }
 
 
   /**
