@@ -1,12 +1,33 @@
-<div 
-  class="b-5 p-3" 
-  [ngClass]="{'today': activeDay === currentDayInLetter, 'past': activeDayInNumber < currentDay-1 }">
-  <h2 class="text-center"> {{ day }} </h2>
-  <div class="row">
-    <app-single-menu 
-      class="col-4 text-center" 
-      *ngFor="let menu of menus"
-      [menu]= "menu">
-    </app-single-menu>
+
+
+<div class="container p-5">
+  <h2 class="text-center pb-5">MENU DU JOUR</h2>
+
+  <div class="container">
+    <div class="row h-100">
+      <div 
+        class="col-8 h-100 d-inline-block"
+        >
+        <div 
+          class="b-5 p-3" 
+          [ngClass]="{'today': activeDay === currentDayInLetter, 'past': activeDayInNumber < currentDay-1 }">
+          <h2 class="text-center"> {{ activeDay }} </h2>
+          <div class="row">
+            <app-single-menu 
+              class="col-4 text-center" 
+              *ngFor="let menu of menus"
+              [menu]= "menu">
+            </app-single-menu>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="col b-5 m-1 p-2 text-center font-weight-bold " id="1" (click)="changeDay('Lundi')">LUNDI</div>
+        <div class="col b-5 m-1 p-2 text-center font-weight-bold" id="2" (click)="changeDay('Mardi')">MARDI</div>
+        <div class="col b-5 m-1 p-2 text-center font-weight-bold" id="3" (click)="changeDay('Mercredi')">MERCREDI</div>
+        <div class="col b-5 m-1 p-2 text-center font-weight-bold" id="4" (click)="changeDay('Jeudi')">JEUDI</div>
+        <div class="col b-5 m-1 p-2 text-center font-weight-bold" id="5" (click)="changeDay('Vendredi')">VENDREDI</div>
+      </div>
+    </div>
   </div>
-</div>
+</div> 

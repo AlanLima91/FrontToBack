@@ -12,6 +12,13 @@ import { DayService } from '../services/day.service';
 })
 export class DayComponent implements OnInit {
 
+  days: string[] = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi'];
+  currentDay: number = new Date().getDay();
+  currentDayInLetter: string = this.days[this.currentDay - 1];
+  // activeDay: string = "Jeudi";
+  activeDay: string = this.currentDayInLetter
+  activeDayInNumber: number =  this.days.indexOf(this.activeDay);
+
   @Input() day: string;
 
   menus: Menu[];
@@ -20,15 +27,20 @@ export class DayComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.day = this.dayService.currentDayInLetter
+  }
+
+  changeDay(day) {
+    this.activeDay = day
+    this.activeDayInNumber = this.days.indexOf(day);
+    this.getMenuByDay(day)
   }
 
 
-  // getMenuByDay(day: string)
-  // {
-  //   this.allService.getMenuByDay(day).subscribe(data =>{
-  //     this.menus = Object.values(data);
-  //     console.log(this.menus);
-  //   })
-  // }
+  getMenuByDay(day: string)
+  {
+    this.allService.getMenuByDay(day).subscribe(data =>{
+      this.menus = Object.values(data);
+      console.log(this.menus);
+    })
+  }
 }

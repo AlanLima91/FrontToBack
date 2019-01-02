@@ -17,8 +17,12 @@ export class DayService {
   changeDay(day) {
     console.log(day);
     
-    this.currentDayInLetter = this.days[day]
-    console.log(this.currentDayInLetter);
+    this.activeDay = day;
+    this.activeDayInNumber=  this.days.indexOf(this.activeDay);
+    
+    console.log(this.activeDay);
     
   }
+
+  
 }
