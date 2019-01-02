@@ -116,3 +116,25 @@
 	color: white;
 	border: solid;
 }
+
+/*
+ *	Média queries
+ */
+ 
+ /* @media screen and (max-width: 991px) {
+	.text-white {
+		width: 70%;
+	}
+ }
+
+ @media screen and (max-width: 768px) {
+	.text-white {
+		width: 50%;
+	}
+ }
+
+ @media screen and (min-width: 200px) and (max-width: 368px) {
+	.text-white {
+		width: 25%;
+	}
+ }  */
