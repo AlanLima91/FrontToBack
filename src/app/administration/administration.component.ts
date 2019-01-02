@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Order } from '../order';
 import { AllService } from '../services/all.service';
+import { User } from '../user';
 
 @Component({
   selector: 'app-administration',
@@ -16,14 +17,12 @@ export class AdministrationComponent implements OnInit
   ngOnInit()
   {
     this.getOrders();
-    this.order = new Order(
-      null, 
-      this.allService.getUserByKey("-LT7EJHxqq4Zycn7lX36")[0], 
-      5, 
-      null,
-    );
-    this.allService.addOrder(this.order).subscribe();
-    console.log()
+    this.allService.getUserByKey("-LT7EJHxqq4Zycn7lX36").subscribe(data => {
+      let user = Object.values(data);
+      // this.order = new Order(null, user, 5, null,);
+      console.log(user);
+    });
+    // this.allService.addOrder(this.order).subscribe();
   }
 
   getOrders()
