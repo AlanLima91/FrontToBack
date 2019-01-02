@@ -7,15 +7,14 @@ import { AllService } from '../services/all.service';
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css']
 })
-export class MenuComponent implements OnInit {
+export class MenuComponent implements OnInit 
+{
 
   menu: Menu;
-  constructor(private allService: AllService) {
-   }
+  constructor(private allService: AllService) { }
 
-  ngOnInit() {
-    this.menu = new Menu('lundi', 'salade', 'kebab', 'glace', 7);
+  ngOnInit()
+  {
     this.allService.addMenu(this.menu);
   }
-
-
+}
