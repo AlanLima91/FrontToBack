@@ -19,7 +19,7 @@ export class ProfilComponent implements OnInit
 
   ngOnInit()
   {
-    this.user = this.allService.getUserByKey("-LT7EJHxqq4Zycn7lX36");
+    this.user = this.allService.getUserByKey("-LT7EJHxqq4Zycn7lX36")[0];
     console.log(this.user);
     console.log(this.allService.getUserByKey("-LT7EJHxqq4Zycn7lX36"));
 
