@@ -87,25 +87,8 @@ export class AllService
     
   }
 
-  /**
-<<<<<<< HEAD
-   *  Read all Orders
-   *  return a table of order
-   */
-  getOrders(): Observable<Order[]>
-  {
-    return this.http.get<Order[]>('https://fronttoback-2c84a.firebaseio.com/orders.json')
-        .pipe(
-          tap(data => {
-            data
-          }),
-          catchError(this.handleError('getOrders', []))
-        );
-  }
 
   /**
-=======
->>>>>>> cabd309c15ae153bfbbc5bec4b66894a4ae81e6e
    *  Add a new User to the table
    *  @param User
    */
@@ -144,15 +127,12 @@ export class AllService
       );
   }
 
-<<<<<<< HEAD
   
     //** Read menus by day */
     getMenuByDay(day: string): Observable<Menu[]>{
       return this.http.get<Menu[]>('https://fronttoback-2c84a.firebaseio.com/menus.json?orderBy=\"day\"&equalTo=\"'+day+'\"');
     }
 
-=======
->>>>>>> 56e9db10a45844e4d882e597889fd8188b1a1123
 
   /**
    * Handle Http operation that failed.

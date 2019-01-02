@@ -12,10 +12,14 @@ export class MenuComponent implements OnInit
 {
 
   menu: Menu;
-  constructor(private allService: AllService) { }
+  constructor(private allService: AllService, private dayService: DayService) { }
 
   ngOnInit()
   {
     this.allService.addMenu(this.menu);
+  }
+
+  changeDay(day){
+    this.dayService.changeDay(day)
   }
 }
