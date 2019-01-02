@@ -25,7 +25,6 @@ export class AdministrationComponent implements OnInit
 
   getOrders()
   {
-    let test = new Order(void, void, 13, void);
     this.allService.getOrders().subscribe(data =>
       {
         this.list = Object.values(data);
