@@ -31,8 +31,21 @@ export class AllService
   }
 
   /**
-   *  Read all Users 
-   *  return a table of user
+   *  Read all Users and look for one user
+   *  return a user
+   */
+  getUserByKey(key: string): Observable<User[]>
+  {
+    return this.http.get<User[]>('https://fronttoback-2c84a.firebaseio.com/users/'+key+'.json')
+    .pipe(
+      tap(data => data),
+      catchError(this.handleError('getUserByKey', []))
+    );
+  }
+
+  /**
+   *  Read all Menu 
+   *  return a table of menu
    */
   getMenus():Observable<Menu[]>
   {
@@ -43,6 +56,19 @@ export class AllService
           }),
           catchError(this.handleError('getMenus', []))
         );
+  }
+
+  /**
+   * Filter existing menus by day
+   * return a table of menus
+   */
+  getMenusByDay(day: string): Observable<Menu[]>
+  {
+    let menus = this.getMenus();
+    return menus;
+      // .pipe(filter((menus) => menus.day == day))
+      // .subscribe(Menu);
+    
   }
 
   /**
@@ -94,17 +120,20 @@ export class AllService
   {
     let url = `https://fronttoback-2c84a.firebaseio.com/orders.json`;
     return this.http.post<Order>(url, order, {responseType: 'json'}).pipe(
-        tap((product: Order) => console.log('beer added')),
+        tap((product: Order) => console.log('order Added')),
         catchError(this.handleError<Order>('addBeer')),
       );
   }
 
+<<<<<<< HEAD
   
     //** Read menus by day */
     getMenuByDay(day: string): Observable<Menu[]>{
       return this.http.get<Menu[]>('https://fronttoback-2c84a.firebaseio.com/menus.json?orderBy=\"day\"&equalTo=\"'+day+'\"');
     }
 
+=======
+>>>>>>> 56e9db10a45844e4d882e597889fd8188b1a1123
 
   /**
    * Handle Http operation that failed.

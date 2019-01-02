@@ -8,33 +8,14 @@ import { DayService } from '../services/day.service';
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css']
 })
-export class MenuComponent implements OnInit {
+export class MenuComponent implements OnInit 
+{
 
-  menus: Menu[];
+  menu: Menu;
+  constructor(private allService: AllService) { }
 
-  constructor(private allService: AllService, private dayService: DayService ) {
-
-   }
-
-  ngOnInit() {
-    // this.menu = new Menu('lundi', 'salade', 'kebab', 'glace', 7);
-    // console.log(this.menu);
-    this.getMenuByDay('Lundi')
-    
-    console.log(this.menus);
-    // this.allService.addMenu(this.menu).subscribe();
-  }
-
-  getMenuByDay(day: string)
+  ngOnInit()
   {
-    this.allService.getMenuByDay(day).subscribe(data =>{
-      this.menus = Object.values(data);
-      console.log(this.menus);
-    })
+    this.allService.addMenu(this.menu);
   }
-
-  changeDay(day) {
-    this.dayService.changeDay(day)
-  }
-
 }

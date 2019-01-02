@@ -7,27 +7,15 @@ et de boucler sur un objet qui contiendra toutes les infos necessaire -->
   MENU        CLIENT          X (pour annuler) -->
 <h2 class="center title-bold text-uppercase p-3">Liste des commandes</h2>
 <!-- Debut de boucle ici -->
-<div class="container boxstyle p-3 b-5">
+<div class="container boxstyle p-3 b-5 .col-xs-12 .col-sm-6 .col-md-8" *ngFor="let order of list">
   <!-- en dessous insérer l'heure contenu dans l'objet -->
-  <h4 class="center text-uppercase mb-3">12h00</h4> 
+  <h4 class="center text-uppercase mb-3">{{ order?.hour }}12H30</h4> 
     <ul class="list-group">
       <li class="list-group-item boxstyle justify-content-around flex-row d-flex order-admin">
         <!-- en dessous insérer le menu choisit contenu dans l'objet -->
-        <p class="text text-uppercase col-4">menu</p>
+        <p class="text text-uppercase col-4 text-success">{{ order.values.menu?.entree }} {{ order.values.menu?.plat }} {{ order.values.menu?.dessert }}</p>
         <!-- en dessous insérer le client contenu dans l'objet -->
-        <p class="text text-uppercase col-4">client</p>
-        <button class="btn-delete">X</button>
-      </li>
-      <!-- Nouveau tour de boucle -->
-      <li class="list-group-item boxstyle justify-content-around flex-row d-flex order-admin">
-        <p class="text text-uppercase col-4">menu</p>
-        <p class="text text-uppercase col-4">client</p>
-        <button class="btn-delete">X</button>
-      </li>
-      <!-- Nouveau tour de boucle -->
-      <li class="list-group-item boxstyle justify-content-around flex-row d-flex order-admin">
-        <p class="text text-uppercase col-4">menu</p>
-        <p class="text text-uppercase col-4">client</p>
+        <p class="text text-uppercase col-4 text-success">{{ order?.values.user?.firstname }} {{ order?.values.user?.name }}</p>
         <button class="btn-delete">X</button>
       </li>
     </ul>

@@ -11,19 +11,19 @@
     <!-- La row marque le début de la boucle -->
     <div *ngFor="let user of list" class="row mb-3 boxstyle justify-content-around center w-100">
         <b class="col-2 text-uppercase">
-            {{ user.firstname }}
+            {{ user.values.name }}
             <!-- Nom de famille de l'utilisateur -->
         </b>
         <b class="col-2">
-            {{ user.name }}
+            {{ user.values.firstname }}
             <!-- Prénom de l'utilisateur -->
         </b>
         <p class="col-4 text-lowercase">
-            {{ user.email }}
+            {{ user.values.email }}
             <!-- email de l'utilisateur -->
         </p>
         <p class="col-2">
-            {{ user.solde }}
+            {{ user.values.solde }}
             <!-- Solde sur le compte de l'utilisateur -->
         </p>
         <button class="col-1 btn" (click)="increase()">

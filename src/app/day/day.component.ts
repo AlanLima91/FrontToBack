@@ -24,11 +24,11 @@ export class DayComponent implements OnInit {
   }
 
 
-  getMenuByDay(day: string)
-  {
-    this.allService.getMenuByDay(day).subscribe(data =>{
-      this.menus = Object.values(data);
-      console.log(this.menus);
-    })
-  }
+  // getMenuByDay(day: string)
+  // {
+  //   this.allService.getMenuByDay(day).subscribe(data =>{
+  //     this.menus = Object.values(data);
+  //     console.log(this.menus);
+  //   })
+  // }
 }
