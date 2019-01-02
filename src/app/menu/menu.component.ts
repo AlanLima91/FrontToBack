@@ -17,5 +17,5 @@ export class MenuComponent implements OnInit {
     this.menu = new Menu('lundi', 'salade', 'kebab', 'glace', 7);
     this.allService.addMenu(this.menu);
   }
-
+}
 
