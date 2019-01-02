@@ -9,7 +9,7 @@ import { AllService } from '../services/all.service';
 })
 export class ListUserComponent implements OnInit
 {
-  list:User[];
+  list:any[] = [];
 
   constructor(private allService:AllService)
   {
@@ -25,26 +25,22 @@ export class ListUserComponent implements OnInit
   {
     this.allService.getUsers().subscribe(data =>
       {
-        this.list = Object.values(data);
-        console.log(this.list);
-        // let cle = Object.keys(data);
-        // let donnees = Object.values(data);
-        // for (let i:number = 0; i < cle.length; i++)
-        // {
-        //   this.list.push({key: cle[i], values:donnees[i]});
-        //   console.log(this.list);
-        // }
+        let cle = Object.keys(data);
+        let donnees = Object.values(data);
+        for(let i = 0; i < cle.length; i++)
+        {
+          this.list.push({key: cle[i], values:donnees[i]});
+        }
       });
   }
   
-  increase(i:number)
+  increase()
   {
-    let solde = this.list[i].solde;
-    
+    let solde = this.list;
   }
 
-  decrease(i:number)
+  decrease()
   {
-
+    let solde = this.list;
   }
 }

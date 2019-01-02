@@ -9,13 +9,13 @@ et de boucler sur un objet qui contiendra toutes les infos necessaire -->
 <!-- Debut de boucle ici -->
 <div class="container boxstyle p-3 b-5" *ngFor="let order of list">
   <!-- en dessous insérer l'heure contenu dans l'objet -->
-  <h4 class="center text-uppercase mb-3">{{ order?.hour }}</h4> 
+  <h4 class="center text-uppercase mb-3">{{ order?.hour }}12H30</h4> 
     <ul class="list-group">
       <li class="list-group-item boxstyle justify-content-around flex-row d-flex order-admin">
         <!-- en dessous insérer le menu choisit contenu dans l'objet -->
-        <p class="text text-uppercase col-4">{{ oder?.price }}</p>
+        <p class="text text-uppercase col-4 text-success">{{ order.values.menu?.entree }} {{ order.values.menu?.plat }} {{ order.values.menu?.dessert }}</p>
         <!-- en dessous insérer le client contenu dans l'objet -->
-        <p class="text text-uppercase col-4">{{order?.user?.firstname}} {{order?.user?.name}}</p>
+        <p class="text text-uppercase col-4 text-success">{{ order?.values.user?.firstname }} {{ order?.values.user?.name }}</p>
         <button class="btn-delete">X</button>
       </li>
     </ul>
