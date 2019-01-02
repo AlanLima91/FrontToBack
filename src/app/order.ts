@@ -10,7 +10,7 @@ export class Order
     public hour     :Type|void
 
 
-    constructor(menu:Menu, user:User, price:number, hour:Type)
+    constructor(menu:Menu|void, user:User|void, price:number, hour:Type|void)
     {
         this.menu   = menu;
         this.user   = user;
