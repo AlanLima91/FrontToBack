@@ -28,7 +28,8 @@
  */
 .bg-green
 {
-    background-color: #34C765
+	background-color: #34C765;
+	padding: 25px;
 }
 
 /* 
@@ -117,6 +118,30 @@
 	border: solid;
 }
 
+
+span.navbar-toggler-icon
+{
+
+}
+
+.menu-hover
+{
+	text-decoration: none !important;
+	
+}
+
+.menu-hover:hover
+{
+	border: 5px solid #016839;
+	background: #016839;
+	padding: 14px 16px;
+}
+
+#infos.col-4.text-white.bg-green.p-0 
+{
+	margin: 15px 15px;
+}
+
 /* RESPONSIVE */
 /* Pour un mobile dont l'écran a une largeur est inférieur à 480px: */
 
@@ -129,12 +154,36 @@
 		margin: 100px;
 		text-align: center;
 	}
- }
+	
+
+	.menu-hover:hover
+	{
+		background: none;
+		border: none;
+		padding: 14px 16px;
+	}
+
+}
 
 /* Pour une tablette dont l'écran a une largeur est comprise entre 480px et 960px: */
 
 @media screen and (min-width: 480px) and (max-width: 960px) { 
+	nav.row.bg-green {
+		/* background: blue; */
+		padding-bottom: 15px;
+	}
+	a {
+		margin: 100px;
+		text-align: center;
+	}
 	
+
+	.menu-hover:hover
+	{
+		background: none;
+		border: none;
+		padding: 14px 16px;
+	}
  }
 
 /* Il est possible de placer la Media Querie directement dans la balise link: */
