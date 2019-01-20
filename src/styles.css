@@ -117,24 +117,26 @@
 	border: solid;
 }
 
-/*
- *	Média queries
- */
- 
- /* @media screen and (max-width: 991px) {
-	.text-white {
-		width: 70%;
+/* RESPONSIVE */
+/* Pour un mobile dont l'écran a une largeur est inférieur à 480px: */
+
+@media screen and (max-width: 480px) { 
+	nav.row.bg-green {
+		/* background: blue; */
+		padding-bottom: 15px;
+	}
+	a {
+		margin: 100px;
+		text-align: center;
 	}
  }
 
- @media screen and (max-width: 768px) {
-	.text-white {
-		width: 50%;
-	}
+/* Pour une tablette dont l'écran a une largeur est comprise entre 480px et 960px: */
+
+@media screen and (min-width: 480px) and (max-width: 960px) { 
+	
  }
 
- @media screen and (min-width: 200px) and (max-width: 368px) {
-	.text-white {
-		width: 25%;
-	}
- }  */
+/* Il est possible de placer la Media Querie directement dans la balise link: */
+
+/* <link rel="stylesheet" media="screen and (max-width: 480px)" href="mobile.css" /> */
