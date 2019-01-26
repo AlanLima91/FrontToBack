@@ -27,10 +27,10 @@
               *ngFor="let menu of menus"
               [menu]= "menu">
             </app-single-menu>
-            <div class="row">
-              <div class="col-4" *ngFor="let key of keys">
-                <button class="btn btn-secondary" (click)="Order(key)"> Commander </button>
-              </div>
+          </div>
+          <div class="row">
+            <div class="col-4" *ngFor="let key of keys">
+              <button class="btn btn-secondary" (click)="Order(key)"> Commander </button>
             </div>
           </div>
         </div>
