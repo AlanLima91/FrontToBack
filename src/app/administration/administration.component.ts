@@ -31,4 +31,9 @@ export class AdministrationComponent implements OnInit
         }
       });
   }
+  deleteOrder(key) {
+    this.allService.deleteOrder(key).subscribe(data => {
+      this.list = this.list.filter(list => list.key !== key)
+    })
+  }
 }

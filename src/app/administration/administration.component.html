@@ -16,7 +16,7 @@ et de boucler sur un objet qui contiendra toutes les infos necessaire -->
         <p class="text text-uppercase col-4 text-success">{{ order.values.menu?.entree }} {{ order.values.menu?.plat }} {{ order.values.menu?.dessert }}</p>
         <!-- en dessous insérer le client contenu dans l'objet -->
         <p class="text text-uppercase col-4 text-success">{{ order?.values.user?.firstname }} {{ order?.values.user?.name }}</p>
-        <button class="btn-delete">X</button>
+        <button class="btn-delete" (click)="deleteOrder(order?.key)">X</button>
       </li>
     </ul>
     <!-- Fin de boucle -->

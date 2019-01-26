@@ -126,7 +126,16 @@ export class AllService
         catchError(this.handleError<Order>('addBeer')),
       );
   }
-  
+        /** DELETE: delete one beer */
+        deleteOrder(key: string): Observable<Order>{
+          let url = `https://fronttoback-2c84a.firebaseio.com/orders/`+key+'.json';
+          return this.http.delete<Order>(url)
+            .pipe(
+              tap(data=>data),
+              catchError(this.handleError<Order>('deleteBeer'))
+            );
+        }
+
     //** Read menus by day */
     getMenuByDay(day: string): Observable<Menu[]>{
       return this.http.get<Menu[]>('https://fronttoback-2c84a.firebaseio.com/menus.json?orderBy=\"day\"&equalTo=\"'+day+'\"');
