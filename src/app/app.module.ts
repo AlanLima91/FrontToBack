@@ -14,6 +14,8 @@ import { AdministrationComponent } from './administration/administration.compone
 import { ListUserComponent } from './list-user/list-user.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { EditMenuComponent } from './edit-menu/edit-menu.component';
+import { AddMenuComponent } from './add-menu/add-menu.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { FormsModule } from '@angular/forms';
     ResetPwdComponent,
     AdministrationComponent,
     ListUserComponent,
+    EditMenuComponent,
+    AddMenuComponent,
   ],
   imports: [
     BrowserModule,

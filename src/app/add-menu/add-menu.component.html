@@ -1,0 +1,35 @@
+<form (ngSubmit)="onSubmit(f)" #f="ngForm" class="row">
+  <div class="col-6">
+      <label for="name"> Nom</label><br>
+      <input type="text" name="name" ngModel required class="w-100"><br>
+  </div>
+  <div class="col-6">
+    <label for="entree"> Entrée</label><br>
+    <input type="entree" name="entree" ngModel required><br>
+  </div>
+  <div class="col-6">
+    <label for="plat"> Plat</label><br>
+    <input type="text" name="plat" ngModel required><br>
+  </div>
+  <div class="col-6">
+    <label for="dessert"> Dessert</label><br>
+    <input type="text" name="dessert" ngModel required><br>
+  </div>  
+  <div class="col-6">
+      <label for="price"> Prix</label><br>
+      <input type="number" name="price" ngModel required><br>
+  </div>
+  <div class="col-6">
+      <label for="day"> Jour</label><br>
+      <select name="day" [ngModel]="day" ngModel required>
+          <option value="Lundi">Lundi</option>
+          <option value="Mardi">Mardi</option>
+          <option value="Mercredi">Mercredi</option>
+          <option value="Jeudi">Jeudi</option>
+          <option value="Vendredi">Vendredi</option>
+      </select><br>
+  </div>
+    <div class="col-12 mt-5">
+        <button type="submit" class="btn btn-success">Ajouter</button>
+    </div>
+</form>

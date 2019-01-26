@@ -12,6 +12,8 @@ export class SingleMenuComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log(this.menu);
+    
   }
 
 }

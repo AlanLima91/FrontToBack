@@ -1,0 +1,29 @@
+<form (ngSubmit)="onSubmit(f)" #f="ngForm" class="row">
+  <div class="col-6">
+      <label for="name"> Nom</label><br>
+      <input type="text" name="name" [ngModel]="menu?.name" required class="w-100"><br>
+  </div>
+  <div class="col-6">
+    <label for="entree"> Entrée </label><br>
+    <input type="text" name="entree" [ngModel]="menu?.entree" ngModel required><br>
+  </div>
+  <div class="col-6">
+    <label for="plat"> Plat</label><br>
+    <input type="text" name="plat" [ngModel]="menu?.plat" ngModel required><br>
+  </div>
+  <div class="col-6">
+    <label for="dessert"> Dessert</label><br>
+    <input type="text" name="dessert" [ngModel]="menu?.dessert" ngModel required><br>
+  </div>
+  <div class="col-6">
+      <label for="price"> Price</label><br>
+      <input type="number" name="price" [ngModel]="menu?.price" ngModel required><br>
+  </div>
+  <div class="d-none">
+      <label for="day"> Price</label><br>
+      <input type="text" name="day" [ngModel]="menu?.day" ngModel required><br>
+  </div>
+    <div class="col-12 mt-5">
+        <button type="submit" class="btn btn-success">Edit</button>
+    </div>
+</form>

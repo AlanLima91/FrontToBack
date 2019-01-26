@@ -12,8 +12,15 @@
           class="b-5 p-3" 
           [ngClass]="{'today': activeDay === currentDayInLetter, 'past': activeDayInNumber < currentDay-1 }">
           
-        <button class="btn-primary test">ajouter</button>
+        <button class="btn-primary test" [routerLink]="['/menu/add']">ajouter</button>
           <h2 class="text-center"> {{ activeDay }} </h2>
+          <div class="row">
+            <div class="col-4"
+              *ngFor="let key of keys"
+            >
+              <button class="btn-secondary test" [routerLink]="['/menu/edit', key]">éditer</button>
+            </div>
+          </div>
           <div class="row">
             <app-single-menu 
               class="col-4 text-center" 

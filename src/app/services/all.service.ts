@@ -132,6 +132,23 @@ export class AllService
       return this.http.get<Menu[]>('https://fronttoback-2c84a.firebaseio.com/menus.json?orderBy=\"day\"&equalTo=\"'+day+'\"');
     }
 
+    getMenuByKey(key: string): Observable<Menu[]>{
+      return this.http.get<Menu[]>('https://fronttoback-2c84a.firebaseio.com/menus/'+key+'.json')
+      .pipe(
+        tap(data => data),
+        catchError(this.handleError('getBeerByKey', []))
+      );
+    }
+
+
+    editMenu(menu: Menu, key: string): Observable<Menu> {
+      const url = `https://fronttoback-2c84a.firebaseio.com/menus/`+key+'.json';
+      return this.http.put<Menu>(url, menu, {responseType: 'json'}).pipe(
+        tap((product: Menu) => console.log('menu edited')),
+        catchError(this.handleError<Menu>('addMenu'))
+      );
+    }
+
 
   /**
    * Handle Http operation that failed.

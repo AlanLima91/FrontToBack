@@ -22,11 +22,18 @@ export class DayComponent implements OnInit {
   @Input() day: string;
 
   menus: Menu[];
+  keys: string[];
 
   constructor(private allService: AllService, private dayService: DayService) {
   }
 
   ngOnInit() {
+    console.log(this.currentDay);
+    if( this.currentDay === 6 || 0) {
+      this.activeDay = 'Lundi'
+      this.activeDayInNumber = this.days.indexOf('Lundi')
+    }
+    this.getMenuByDay(this.activeDay)
   }
 
   changeDay(day) {
@@ -39,8 +46,16 @@ export class DayComponent implements OnInit {
   getMenuByDay(day: string)
   {
     this.allService.getMenuByDay(day).subscribe(data =>{
+
+      
       this.menus = Object.values(data);
+      this.keys = Object.keys(data)
+      console.log(data);
+      
       console.log(this.menus);
+      console.log(this.keys);
+      
+      
     })
   }
 }

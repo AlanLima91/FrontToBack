@@ -1,5 +1,6 @@
 export class Menu
 {
+    public key: string;
     public name: string;
     public day: string;
     public entree: string;
