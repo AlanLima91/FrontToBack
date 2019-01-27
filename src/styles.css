@@ -20,16 +20,21 @@
  */
 .b-5
 {
-    border: 5px solid black;
+	border: 5px solid black;
+	
 }
 
+div.col-4
+{
+	padding: 0px;
+}
 /* 
  *  Background Green
  */
 .bg-green
 {
 	background-color: #34C765;
-	padding: 25px;
+	
 }
 
 /* 
@@ -119,10 +124,6 @@
 }
 
 
-span.navbar-toggler-icon
-{
-
-}
 
 .menu-hover
 {
@@ -133,13 +134,25 @@ span.navbar-toggler-icon
 .menu-hover:hover
 {
 	border: 5px solid #016839;
+	border-radius: 10px;
 	background: #016839;
 	padding: 14px 16px;
+
 }
 
 #infos.col-4.text-white.bg-green.p-0 
 {
 	margin: 15px 15px;
+}
+
+a.col-12.btn.flex-row
+{
+	margin-left: 15px;
+}
+
+button.btn-secondary.test
+{
+	margin-left: 15px;
 }
 
 /* RESPONSIVE */
@@ -158,10 +171,21 @@ span.navbar-toggler-icon
 
 	.menu-hover:hover
 	{
+
 		background: none;
 		border: none;
 		padding: 14px 16px;
 	}
+
+	.btn-secondary
+	{
+		margin-left: 14px;
+	}
+	.b-5
+{
+	border: 5px solid black;
+	margin-right: 15px;
+}
 
 }
 
@@ -184,6 +208,11 @@ span.navbar-toggler-icon
 		border: none;
 		padding: 14px 16px;
 	}
+
+	/* .btn-secondary
+	{
+		margin-left: 14px;
+	} */
  }
 
 /* Il est possible de placer la Media Querie directement dans la balise link: */

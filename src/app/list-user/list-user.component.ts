@@ -37,10 +37,15 @@ export class ListUserComponent implements OnInit
   increase()
   {
     let solde = this.list;
+    // this.solde += 1;
+    //this.post.like += 1;
+    // this.solde = this.solde + 1;
+
   }
 
   decrease()
   {
     let solde = this.list;
+    // user.values.solde -= 1;
   }
 }
