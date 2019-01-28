@@ -10,7 +10,7 @@ import { AllService } from '../services/all.service';
 export class ListUserComponent implements OnInit
 {
   list:any[] = [];
-
+  solde:number;
   constructor(private allService:AllService)
   {
 
@@ -37,9 +37,12 @@ export class ListUserComponent implements OnInit
   increase()
   {
     let solde = this.list;
+    
+    // this.solde = this.solde+1;
     // this.solde += 1;
     //this.post.like += 1;
-    // this.solde = this.solde + 1;
+    this.solde = this.solde++;
+    console.log(this.solde);
 
   }
 
