@@ -49,6 +49,8 @@ export class ListUserComponent implements OnInit
   decrease()
   {
     let solde = this.list;
+    this.solde = this.solde--;
+    console.log(this.solde);
     // user.values.solde -= 1;
   }
 }
