@@ -27,6 +27,7 @@
 div.col-4
 {
 	padding: 0px;
+	cursor: pointer;
 }
 /* 
  *  Background Green
