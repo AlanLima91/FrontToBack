@@ -186,11 +186,17 @@ button.btn-secondary.test
 	{
 		margin-left: 14px;
 	}
+
 	.b-5
-{
-	border: 5px solid black;
-	margin-right: 15px;
-}
+	{
+		border: 5px solid black;
+		margin-right: 15px;
+	}
+
+	.solde-css
+	{
+		font-weight: 300;
+	}
 
 }
 
@@ -206,7 +212,11 @@ button.btn-secondary.test
 		text-align: center;
 	}
 	
-
+	.menu
+	{
+		display: none;
+	}
+	
 	.menu-hover:hover
 	{
 		background: none;
