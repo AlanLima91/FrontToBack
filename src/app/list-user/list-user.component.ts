@@ -10,7 +10,8 @@ import { AllService } from '../services/all.service';
 export class ListUserComponent implements OnInit
 {
   list:any[] = [];
-  solde:number;
+  solde:number = 0;
+
   constructor(private allService:AllService)
   {
 
@@ -34,23 +35,21 @@ export class ListUserComponent implements OnInit
       });
   }
   
-  increase()
+  increase(index)
   {
-    let solde = this.list;
+    //let solde = this.list;
+    this.list[index].values.solde += 1;
+    console.log(this.list);
     
     // this.solde = this.solde+1;
     // this.solde += 1;
     //this.post.like += 1;
-    this.solde = this.solde++;
-    console.log(this.solde);
-
   }
 
-  decrease()
+  decrease(index)
   {
-    let solde = this.list;
-    this.solde = this.solde--;
-    console.log(this.solde);
+    this.list[index].values.solde -= 1;
+    console.log(this.list);
     // user.values.solde -= 1;
   }
 }

@@ -169,6 +169,10 @@ button.btn-secondary.test
 		text-align: center;
 	}
 	
+	.menu
+	{
+		display: none;
+	}
 
 	.menu-hover:hover
 	{
