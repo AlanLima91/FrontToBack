@@ -22,7 +22,7 @@ export class AllService
    */
   getUsers():Observable<User[]>
   {
-    return this.http.get<User[]>('https://fronttoback-2c84a.firebaseio.com/users.json')
+    return this.http.get<User[]>('http://localhost:8000/users.json')
         .pipe(
           tap(data => {
             data
@@ -37,7 +37,7 @@ export class AllService
    */
   getOrders():Observable<Order[]>
   {
-    return this.http.get<Order[]>('https://fronttoback-2c84a.firebaseio.com/orders.json')
+    return this.http.get<Order[]>('http://localhost:8000')
         .pipe(
           tap(data => {
             data
@@ -52,7 +52,7 @@ export class AllService
    */
   getMenus():Observable<Menu[]>
   {
-    return this.http.get<Menu[]>('https://fronttoback-2c84a.firebaseio.com/menus.json')
+    return this.http.get<Menu[]>('http://localhost:8000/menus.json')
         .pipe(
           tap(data => {
             data
@@ -67,7 +67,7 @@ export class AllService
    */
   getUserByKey(key: string): Observable<User[]>
   {
-    return this.http.get<User[]>('https://fronttoback-2c84a.firebaseio.com/users/'+key+'.json')
+    return this.http.get<User[]>('http://localhost:8000/users/'+key+'.json')
     .pipe(
       tap(data => data),
       catchError(this.handleError('getUserByKey', []))
@@ -94,7 +94,7 @@ export class AllService
    */
   addUser(user: User): Observable<User>
   {
-    let url = `https://fronttoback-2c84a.firebaseio.com/users.json`;
+    let url = `http://localhost:8000/users.json`;
     return this.http.post<User>(url, user, {responseType: 'json'}).pipe(
         tap((product: User) => console.log('User Added')),
         catchError(this.handleError<User>('addBeer')),
@@ -107,7 +107,7 @@ export class AllService
    */
   addMenu(menu: Menu): Observable<Menu>
   {
-    let url = `https://fronttoback-2c84a.firebaseio.com/menus.json`;
+    let url = `http://localhost:8000/menus.json`;
     return this.http.post<Menu>(url, menu, {responseType: 'json'}).pipe(
         tap((product: Menu) => console.log('menu added')),
         catchError(this.handleError<Menu>('addMenu')),
@@ -120,7 +120,7 @@ export class AllService
    */
   addOrder(order: Order): Observable<Order>
   {
-    let url = `https://fronttoback-2c84a.firebaseio.com/orders.json`;
+    let url = `http://localhost:8000/orders.json`;
     return this.http.post<Order>(url, order, {responseType: 'json'}).pipe(
         tap((product: Order) => console.log('order Added')),
         catchError(this.handleError<Order>('addBeer')),
@@ -128,7 +128,7 @@ export class AllService
   }
         /** DELETE: delete one beer */
         deleteOrder(key: string): Observable<Order>{
-          let url = `https://fronttoback-2c84a.firebaseio.com/orders/`+key+'.json';
+          let url = `http://localhost:8000/orders/`+key+'.json';
           return this.http.delete<Order>(url)
             .pipe(
               tap(data=>data),
@@ -138,11 +138,11 @@ export class AllService
 
     //** Read menus by day */
     getMenuByDay(day: string): Observable<Menu[]>{
-      return this.http.get<Menu[]>('https://fronttoback-2c84a.firebaseio.com/menus.json?orderBy=\"day\"&equalTo=\"'+day+'\"');
+      return this.http.get<Menu[]>('http://localhost:8000/menus.json?orderBy=\"day\"&equalTo=\"'+day+'\"');
     }
 
     getMenuByKey(key: string): Observable<Menu[]>{
-      return this.http.get<Menu[]>('https://fronttoback-2c84a.firebaseio.com/menus/'+key+'.json')
+      return this.http.get<Menu[]>('http://localhost:8000/menus/'+key+'.json')
       .pipe(
         tap(data => data),
         catchError(this.handleError('getBeerByKey', []))
@@ -151,7 +151,7 @@ export class AllService
 
 
     editMenu(menu: Menu, key: string): Observable<Menu> {
-      const url = `https://fronttoback-2c84a.firebaseio.com/menus/`+key+'.json';
+      const url = `http://localhost:8000/menus/`+key+'.json';
       return this.http.put<Menu>(url, menu, {responseType: 'json'}).pipe(
         tap((product: Menu) => console.log('menu edited')),
         catchError(this.handleError<Menu>('addMenu'))
