@@ -136,8 +136,11 @@ div.col-4
 {
 	border: 5px solid #016839;
 	border-radius: 10px;
-	background: #016839;
+	background: #016839; 
 	padding: 14px 16px;
+	margin: 0;
+	opacity: 0.7;
+	
 
 }
 
