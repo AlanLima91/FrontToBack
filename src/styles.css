@@ -203,6 +203,7 @@ button.btn-secondary.test
 /* Pour une tablette dont l'écran a une largeur est comprise entre 480px et 960px: */
 
 @media screen and (min-width: 480px) and (max-width: 960px) { 
+
 	nav.row.bg-green {
 		/* background: blue; */
 		padding-bottom: 15px;
