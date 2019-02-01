@@ -1,7 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Menu } from '../menu';
-import { AllService } from '../services/all.service';
 import { DayService } from '../services/day.service';
+import { MenuService } from '../services/menu.service';
+import { UserService } from '../services/user.service';
+import { OrderService } from '../services/order.service';
 import { Order } from '../order';
 import { User } from '../user';
 import { Router } from '@angular/router';
@@ -29,7 +31,7 @@ export class DayComponent implements OnInit {
   orderMenu: Menu[];
   user: User[]
 
-  constructor(private allService: AllService, private router:Router) {
+  constructor(private menuService:MenuService ,private userService:UserService, private orderService:OrderService, private router:Router) {
   }
 
   ngOnInit() {
@@ -48,11 +50,11 @@ export class DayComponent implements OnInit {
   }
 
   Order(key: string) {
-    this.allService.getMenuByKey(key).subscribe(data => {
+    this.menuService.getMenuByKey(key).subscribe(data => {
       console.log(data);
       
       this.orderMenu = data
-      this.allService.getUserByKey("-LT7EJHxqq4Zycn7lX36").subscribe( data => {
+      this.userService.getUserByKey("-LT7EJHxqq4Zycn7lX36").subscribe( data => {
         console.log(data)
         this.user = data
         console.log(this.user)
@@ -66,7 +68,7 @@ export class DayComponent implements OnInit {
         }
         console.log(order);
         
-        this.allService.addOrder(order).subscribe( data => {
+        this.orderService.addOrder(order).subscribe( data => {
           this.router.navigate([`./`])
         })
       })
@@ -76,7 +78,7 @@ export class DayComponent implements OnInit {
 
   getMenuByDay(day: string)
   {
-    this.allService.getMenuByDay(day).subscribe(data =>{
+    this.menuService.getMenuByDay(day).subscribe(data =>{
 
       
       this.menus = Object.values(data);

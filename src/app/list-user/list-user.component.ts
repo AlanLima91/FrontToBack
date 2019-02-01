@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../services/user.service';
 import { User } from "../user";
-import { AllService } from '../services/all.service';
+
 
 @Component({
   selector: 'app-list-user',
@@ -12,7 +13,7 @@ export class ListUserComponent implements OnInit
   list:any[] = [];
   solde:number = 0;
 
-  constructor(private allService:AllService)
+  constructor(private userService:UserService)
   {
 
   }
@@ -24,7 +25,7 @@ export class ListUserComponent implements OnInit
 
   getUsers()
   {
-    this.allService.getUsers().subscribe(data =>
+    this.userService.getUsers().subscribe(data =>
       {
         let cle = Object.keys(data);
         let donnees = Object.values(data);

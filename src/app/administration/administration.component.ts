@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Order } from '../order';
-import { AllService } from '../services/all.service';
+import { OrderService } from '../services/order.service';
 import { User } from '../user';
 
 @Component({
@@ -12,7 +12,7 @@ export class AdministrationComponent implements OnInit
 {
   list:any[] = [];
 
-  constructor(private allService:AllService) { }
+  constructor(private orderService:OrderService) { }
 
   ngOnInit()
   {
@@ -21,7 +21,7 @@ export class AdministrationComponent implements OnInit
 
   getOrders()
   {
-    this.allService.getOrders().subscribe(data =>
+    this.orderService.getOrders().subscribe(data =>
       {
         let cle = Object.keys(data);
         let donnees = Object.values(data);
@@ -32,7 +32,7 @@ export class AdministrationComponent implements OnInit
       });
   }
   deleteOrder(key) {
-    this.allService.deleteOrder(key).subscribe(data => {
+    this.orderService.deleteOrder(key).subscribe(data => {
       this.list = this.list.filter(list => list.key !== key)
     })
   }

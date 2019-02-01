@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
-import {AllService} from '../services/all.service';
+import {MenuService} from '../services/menu.service';
 import {Menu} from '../menu';
 
 @Component({
@@ -13,13 +13,13 @@ export class AddMenuComponent implements OnInit {
 
   @Input() day: string;
 
-  constructor(private router:Router, private allService: AllService) { }
+  constructor(private router:Router, private menuService: MenuService) { }
 
   ngOnInit() {
   }
 
   onSubmit(form){
-    this.allService.addMenu(form.form.value)
+    this.menuService.addMenu(form.form.value)
       .subscribe(menu => {
         this.router.navigate([`./`]);
       });
