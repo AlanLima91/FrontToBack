@@ -97,7 +97,7 @@ export class AllService
   {
     let url = `http://localhost:8000/users`;
     // , {responseType: 'json'}
-    return this.http.post<User>(url, user).pipe(
+    return this.http.post<User>(url, user, {responseType: 'json'}).pipe(
         tap((product: User) => console.log('User Added')),
         catchError(this.handleError<User>('addBeer')),
       );
@@ -111,7 +111,7 @@ export class AllService
   {
     let url = `http://localhost:8000/menus`;
     // , {responseType: 'json'}
-    return this.http.post<Menu>(url, menu).pipe(
+    return this.http.post<Menu>(url, menu, {responseType: 'json'}).pipe(
         tap((product: Menu) => console.log('menu added')),
         catchError(this.handleError<Menu>('addMenu')),
       );
@@ -125,7 +125,7 @@ export class AllService
   {
     let url = `http://localhost:8000/orders`;
     // , {responseType: 'json'}
-    return this.http.post<Order>(url, order).pipe(
+    return this.http.post<Order>(url, order, {responseType: 'json'}).pipe(
         tap((product: Order) => console.log('order Added')),
         catchError(this.handleError<Order>('addBeer')),
       );
