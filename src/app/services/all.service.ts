@@ -22,7 +22,7 @@ export class AllService
    */
   getUsers():Observable<User[]>
   {
-    return this.http.get<User[]>('http://localhost:8000/users.json')
+    return this.http.get<User[]>('http://localhost:8000/users')
         .pipe(
           tap(data => {
             data
@@ -52,7 +52,7 @@ export class AllService
    */
   getMenus():Observable<Menu[]>
   {
-    return this.http.get<Menu[]>('http://localhost:8000/menus.json')
+    return this.http.get<Menu[]>('http://localhost:8000/menus')
         .pipe(
           tap(data => {
             data
@@ -61,13 +61,14 @@ export class AllService
         );
   }
 
+
   /**
    *  Read all Users and look for one user
    *  return a user
    */
   getUserByKey(key: string): Observable<User[]>
   {
-    return this.http.get<User[]>('http://localhost:8000/users/'+key+'.json')
+    return this.http.get<User[]>('http://localhost:8000/users/'+key)
     .pipe(
       tap(data => data),
       catchError(this.handleError('getUserByKey', []))
@@ -94,8 +95,9 @@ export class AllService
    */
   addUser(user: User): Observable<User>
   {
-    let url = `http://localhost:8000/users.json`;
-    return this.http.post<User>(url, user, {responseType: 'json'}).pipe(
+    let url = `http://localhost:8000/users`;
+    // , {responseType: 'json'}
+    return this.http.post<User>(url, user).pipe(
         tap((product: User) => console.log('User Added')),
         catchError(this.handleError<User>('addBeer')),
       );
@@ -107,8 +109,9 @@ export class AllService
    */
   addMenu(menu: Menu): Observable<Menu>
   {
-    let url = `http://localhost:8000/menus.json`;
-    return this.http.post<Menu>(url, menu, {responseType: 'json'}).pipe(
+    let url = `http://localhost:8000/menus`;
+    // , {responseType: 'json'}
+    return this.http.post<Menu>(url, menu).pipe(
         tap((product: Menu) => console.log('menu added')),
         catchError(this.handleError<Menu>('addMenu')),
       );
@@ -120,15 +123,16 @@ export class AllService
    */
   addOrder(order: Order): Observable<Order>
   {
-    let url = `http://localhost:8000/orders.json`;
-    return this.http.post<Order>(url, order, {responseType: 'json'}).pipe(
+    let url = `http://localhost:8000/orders`;
+    // , {responseType: 'json'}
+    return this.http.post<Order>(url, order).pipe(
         tap((product: Order) => console.log('order Added')),
         catchError(this.handleError<Order>('addBeer')),
       );
   }
         /** DELETE: delete one beer */
         deleteOrder(key: string): Observable<Order>{
-          let url = `http://localhost:8000/orders/`+key+'.json';
+          let url = `http://localhost:8000/orders/`+key;
           return this.http.delete<Order>(url)
             .pipe(
               tap(data=>data),
@@ -142,7 +146,7 @@ export class AllService
     }
 
     getMenuByKey(key: string): Observable<Menu[]>{
-      return this.http.get<Menu[]>('http://localhost:8000/menus/'+key+'.json')
+      return this.http.get<Menu[]>('http://localhost:8000/menus/'+key)
       .pipe(
         tap(data => data),
         catchError(this.handleError('getBeerByKey', []))
@@ -151,7 +155,7 @@ export class AllService
 
 
     editMenu(menu: Menu, key: string): Observable<Menu> {
-      const url = `http://localhost:8000/menus/`+key+'.json';
+      const url = `http://localhost:8000/menus/`+key;
       return this.http.put<Menu>(url, menu, {responseType: 'json'}).pipe(
         tap((product: Menu) => console.log('menu edited')),
         catchError(this.handleError<Menu>('addMenu'))
