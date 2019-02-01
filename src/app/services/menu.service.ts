@@ -53,7 +53,7 @@ export class MenuService {
   }
    //** Read menus by day */
    getMenuByDay(day: string): Observable<Menu[]>{
-    return this.http.get<Menu[]>('http://localhost:8000/menus.json?orderBy=\"day\"&equalTo=\"'+day+'\"');
+    return this.http.get<Menu[]>('http://localhost:8000/menus?orderBy=\"day\"&equalTo=\"'+day+'\"');
   }
 
   getMenuByKey(key: string): Observable<Menu[]>{
