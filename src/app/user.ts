@@ -6,16 +6,18 @@ export class User
     public firstname   :string;
     public email       :string;
     public password    :string;
+    public admin       :boolean;
+    public orderKeys   :string;
     public solde       :number;
-    public order       :Order|void;
     
-    constructor(name:string, firstname:string, email:string, password:string, solde:number, order :Order|void)
+    constructor(name:string, firstname:string, email:string, password:string, admin:boolean, orderKeys: string, solde:number)
     {
-        this.name = name;
-        this.firstname = firstname;
-        this.email = email;
-        this.password = password;
-        this.solde = solde;
-        this.order = order;
+        this.name       = name;
+        this.firstname  = firstname;
+        this.email      = email;
+        this.password   = password;
+        this.admin      = admin;
+        this.orderKeys  = orderKeys;
+        this.solde      = solde;
     }
 }

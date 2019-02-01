@@ -1,20 +1,19 @@
 export class Menu
 {
-    public key: string;
     public name: string;
-    public day: string;
     public entree: string;
     public plat: string;
-    public dessert: string;
+    public dessert: string;    
+    public day: string;    
     public price: number;
 
     constructor(day: string, entree: string, plat: string, dessert: string, price: number)
     {
-        this.name = name;
-        this.day = day;
-        this.entree = entree;
-        this.plat = plat;
-        this.dessert = dessert;
-        this.price = price;
+        this.name       = name;
+        this.entree     = entree;
+        this.plat       = plat;
+        this.dessert    = dessert;
+        this.day        = day
+        this.price      = price;
     }
 }
