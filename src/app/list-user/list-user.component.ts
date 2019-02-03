@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../services/user.service';
 import { User } from "../user";
-import { AllService } from '../services/all.service';
+
 
 @Component({
   selector: 'app-list-user',
@@ -10,8 +11,9 @@ import { AllService } from '../services/all.service';
 export class ListUserComponent implements OnInit
 {
   list:any[] = [];
-  solde:number;
-  constructor(private allService:AllService)
+  solde:number = 0;
+
+  constructor(private userService:UserService)
   {
 
   }
@@ -27,7 +29,7 @@ export class ListUserComponent implements OnInit
 
   getUsers()
   {
-    this.allService.getUsers().subscribe(data =>
+    this.userService.getUsers().subscribe(data =>
       {
         let cle = Object.keys(data);
         let donnees = Object.values(data);
@@ -38,23 +40,21 @@ export class ListUserComponent implements OnInit
       });
   }
   
-  increase()
+  increase(index)
   {
-    let solde = this.list;
+    //let solde = this.list;
+    this.list[index].values.solde += 1;
+    console.log(this.list);
     
     // this.solde = this.solde+1;
     // this.solde += 1;
     //this.post.like += 1;
-    this.solde = this.solde++;
-    console.log(this.solde);
-
   }
 
-  decrease()
+  decrease(index)
   {
-    let solde = this.list;
-    this.solde = this.solde--;
-    console.log(this.solde);
+    this.list[index].values.solde -= 1;
+    console.log(this.list);
     // user.values.solde -= 1;
   }
 }

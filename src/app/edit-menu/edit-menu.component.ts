@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { AllService } from '../services/all.service';
+import { MenuService } from '../services/menu.service';
 import { Menu } from '../menu';
 import { log } from 'util';
 
@@ -17,7 +17,7 @@ export class EditMenuComponent implements OnInit {
   menu: Object;
 
 
-  constructor(private route: ActivatedRoute, private http: HttpClient, private allService: AllService, private router: Router) {
+  constructor(private menuService:MenuService, private route: ActivatedRoute, private http: HttpClient, private router: Router) {
     this.route.params
     .subscribe( params => this.key = params.key)
   }
@@ -28,7 +28,7 @@ export class EditMenuComponent implements OnInit {
   }
 
   getMenuByKey(key){
-    this.allService.getMenuByKey(key)
+    this.menuService.getMenuByKey(key)
     .subscribe(data => {
      this.menu = data;  //0 Firebase send an array 
      console.log(data)
@@ -36,7 +36,7 @@ export class EditMenuComponent implements OnInit {
   }
 
   onSubmit(form){
-    this.allService.editMenu(form.form.value, this.key)
+    this.menuService.editMenu(form.form.value, this.key)
       .subscribe(menu => {
         this.router.navigate([`./`]);
       });
