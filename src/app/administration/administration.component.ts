@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Order } from '../order';
 import { OrderService } from '../services/order.service';
+import { MenuService } from '../services/menu.service';
+import { Order } from '../order';
 import { User } from '../user';
 
 @Component({
@@ -11,8 +12,9 @@ import { User } from '../user';
 export class AdministrationComponent implements OnInit
 {
   list:any[] = [];
+  menu: any[]
 
-  constructor(private orderService:OrderService) { }
+  constructor(private orderService:OrderService, private menuService: MenuService) { }
 
   ngOnInit()
   {
@@ -23,17 +25,22 @@ export class AdministrationComponent implements OnInit
   {
     this.orderService.getOrders().subscribe(data =>
       {
-        let cle = Object.keys(data);
-        let donnees = Object.values(data);
-        for(let i = 0; i < cle.length; i++)
-        {
-          this.list.push({key: cle[i], values:donnees[i]});
-        }
+        this.list = Object.values(data);
+        
+        // for(let i = 0; i < cle.length; i++)
+        // {
+        //   this.list.push({key: cle[i], values:donnees[i]});
+        // }
       });
+  }
+  getMenu(key) {
+    this.menuService.getMenuByKey(key).subscribe(data => {
+      this.menu = data
+    })
   }
   deleteOrder(key) {
     this.orderService.deleteOrder(key).subscribe(data => {
-      this.list = this.list.filter(list => list.key !== key)
+      this.list[0] = this.list[0].filter(list => list._id !== key)
     })
   }
 }

@@ -15,23 +15,16 @@
         <button class="btn-primary test" [routerLink]="['/menu/add']">ajouter</button>
           <h2 class="text-center"> {{ activeDay }} </h2>
           <div class="row">
-            <div class="col-4"
-              *ngFor="let key of keys"
-            >
-              <button class="btn-secondary test" [routerLink]="['/menu/edit', key]">éditer</button>
-            </div>
           </div>
           <div class="row">
-            <app-single-menu 
-              class="col-4 text-center" 
-              *ngFor="let menu of menus"
-              [menu]= "menu">
-            </app-single-menu>
-          </div>
-          <div class="row">
-            <div class="col-4" *ngFor="let key of keys">
-              <button class="btn btn-secondary" (click)="Order(key)"> Commander </button>
-            </div>
+            <ng-container
+              *ngIf='menus'>
+              <app-single-menu 
+                class="col-4 text-center" 
+                *ngFor="let menu of menus[0]"
+                [menu]= "menu">
+              </app-single-menu>
+            </ng-container>
           </div>
         </div>
       </div>

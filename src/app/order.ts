@@ -4,17 +4,17 @@ import { Menu } from './menu';
 
 export class Order
 {
-    public menu     :Menu[]|void;
-    public user     :User[]|void;
-    public price    :number;
-    public hour     :string
+    public menuKeys     :[string];
+    public userKey      :string|void;
+    public price        :number;
+    public date         :Date
 
 
-    constructor(menu:Menu[]|void, user:User[]|void, price:number, hour:string)
+    constructor(menuKeys:[string], userKey:string|void, price:number, date:Date)
     {
-        this.menu   = menu;
-        this.user   = user;
-        this.price  = price;
-        this.hour   = hour;
+        this.menuKeys   = menuKeys;
+        this.userKey    = userKey;
+        this.price      = price;
+        this.date       = date;
     }
 }

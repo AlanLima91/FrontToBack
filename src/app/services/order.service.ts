@@ -4,12 +4,14 @@ import {throwError as observableThrowError,  Observable } from 'rxjs';
 import { tap, catchError, filter } from 'rxjs/operators';
 import { Order } from '../order';
 
+import { MenuService } from "./menu.service";
+
 @Injectable({
   providedIn: 'root'
 })
 export class OrderService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, private menuService: MenuService) { }
 
    /**
    *  Read all Orders
@@ -17,7 +19,7 @@ export class OrderService {
    */
   getOrders():Observable<Order[]>
   {
-    return this.http.get<Order[]>('http://localhost:8000')
+    return this.http.get<Order[]>('http://localhost:8000/orders')
         .pipe(
           tap(data => {
             data

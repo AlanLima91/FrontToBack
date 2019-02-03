@@ -3,19 +3,26 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import {throwError as observableThrowError,  Observable } from 'rxjs';
 import { tap, catchError, filter } from 'rxjs/operators';
 import { Menu } from '../menu';
+import axios from "axios";
 
+const url = 'http://localhost:8000'
 @Injectable({
   providedIn: 'root'
 })
 export class MenuService {
 
+  
   constructor(private http:HttpClient) { }
    /**
    *  Read all Menu 
    *  return a table of menu
    */
-  getMenus():Observable<Menu[]>
+  getMenus(): Observable<Menu[]>
   {
+    // axios.get(url+'/menus').then(result => {
+    //   console.log(result);
+    //   return result;
+    // }) 
     return this.http.get<Menu[]>('http://localhost:8000/menus')
         .pipe(
           tap(data => {
@@ -25,18 +32,18 @@ export class MenuService {
         );
   }
 
-  /**
-   * Filter existing menus by day
-   * return a table of menus
-   */
-  getMenusByDay(day: string): Observable<Menu[]>
-  {
-    let menus = this.getMenus();
-    return menus;
-      // .pipe(filter((menus) => menus.day == day))
-      // .subscribe(Menu);
+  // /**
+  //  * Filter existing menus by day
+  //  * return a table of menus
+  //  */
+  // getMenusByDay(day: string): Observable<Menu[]>
+  // {
+  //   let menus = this.getMenus();
+  //   return menus;
+  //     // .pipe(filter((menus) => menus.day == day))
+  //     // .subscribe(Menu);
     
-  }
+  // }
 
   /**
    *  Add a new User to the table
@@ -53,7 +60,7 @@ export class MenuService {
   }
    //** Read menus by day */
    getMenuByDay(day: string): Observable<Menu[]>{
-    return this.http.get<Menu[]>('http://localhost:8000/menus?orderBy=\"day\"&equalTo=\"'+day+'\"');
+    return this.http.get<Menu[]>('http://localhost:8000/menus/day='+day);
   }
 
   getMenuByKey(key: string): Observable<Menu[]>{
@@ -67,7 +74,7 @@ export class MenuService {
 
   editMenu(menu: Menu, key: string): Observable<Menu> {
     const url = `http://localhost:8000/menus/`+key;
-    return this.http.put<Menu>(url, menu, {responseType: 'json'}).pipe(
+    return this.http.patch<Menu>(url, menu, {responseType: 'json'}).pipe(
       tap((product: Menu) => console.log('menu edited')),
       catchError(this.handleError<Menu>('addMenu'))
     );

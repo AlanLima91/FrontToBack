@@ -49,45 +49,22 @@ export class DayComponent implements OnInit {
     this.getMenuByDay(day)
   }
 
-  Order(key: string) {
-    this.menuService.getMenuByKey(key).subscribe(data => {
-      console.log(data);
-      
-      this.orderMenu = data
-      this.userService.getUserByKey("-LT7EJHxqq4Zycn7lX36").subscribe( data => {
-        console.log(data)
-        this.user = data
-        console.log(this.user)
-        console.log(this.orderMenu)
-        let hour = "12h30"
-        let order: Order = {
-          menu: this.orderMenu,
-          user: this.user,
-          hour: hour,
-          price: 7
-        }
-        console.log(order);
-        
-        this.orderService.addOrder(order).subscribe( data => {
-          this.router.navigate([`./`])
-        })
-      })
-    });
-
-  }
-
   getMenuByDay(day: string)
   {
+    console.log(day);
     this.menuService.getMenuByDay(day).subscribe(data =>{
-
-      
-      this.menus = Object.values(data);
+      let values =  Object.values(data);
+      this.menus = values
       this.keys = Object.keys(data)
       console.log(data);
       
-      console.log(this.menus);
+      console.log(this.menus[0]);
       console.log(this.keys);
       
+      
+    }, error => {
+      console.log(error);
+      this.menus = [];
       
     })
   }

@@ -16,6 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { EditMenuComponent } from './edit-menu/edit-menu.component';
 import { AddMenuComponent } from './add-menu/add-menu.component';
+import { MenuComponent } from './administration/menu/menu.component';
+import { AdminUserComponent } from './administration/admin-user/admin-user.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { AddMenuComponent } from './add-menu/add-menu.component';
     ListUserComponent,
     EditMenuComponent,
     AddMenuComponent,
+    MenuComponent,
+    AdminUserComponent,
   ],
   imports: [
     BrowserModule,
