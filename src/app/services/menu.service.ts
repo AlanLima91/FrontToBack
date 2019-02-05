@@ -3,18 +3,18 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import {throwError as observableThrowError,  Observable } from 'rxjs';
 import { tap, catchError, filter } from 'rxjs/operators';
 import { Menu } from '../menu';
-import axios from "axios";
+import axios from 'axios';
 
-const url = 'http://localhost:8000'
+const url = 'http://localhost:8000';
 @Injectable({
   providedIn: 'root'
 })
 export class MenuService {
 
-  
-  constructor(private http:HttpClient) { }
+
+  constructor(private http: HttpClient) { }
    /**
-   *  Read all Menu 
+   *  Read all Menu
    *  return a table of menu
    */
   getMenus(): Observable<Menu[]>
@@ -22,14 +22,14 @@ export class MenuService {
     // axios.get(url+'/menus').then(result => {
     //   console.log(result);
     //   return result;
-    // }) 
+    // })
     return this.http.get<Menu[]>('http://localhost:8000/menus')
         .pipe(
-          tap(data => {
+          tap(data => ( {
             data
           }),
           catchError(this.handleError('getMenus', []))
-        );
+        ));
   }
 
   // /**
@@ -42,7 +42,7 @@ export class MenuService {
   //   return menus;
   //     // .pipe(filter((menus) => menus.day == day))
   //     // .subscribe(Menu);
-    
+
   // }
 
   /**
@@ -59,7 +59,8 @@ export class MenuService {
       );
   }
    //** Read menus by day */
-   getMenuByDay(day: string): Observable<Menu[]>{
+
+  getMenuByDay(day: string): Observable<Menu[]>{
     return this.http.get<Menu[]>('http://localhost:8000/menus/day='+day);
   }
 

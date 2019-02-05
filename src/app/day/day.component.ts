@@ -21,7 +21,7 @@ export class DayComponent implements OnInit {
   currentDay: number = new Date().getDay();
   currentDayInLetter: string = this.days[this.currentDay - 1];
   // activeDay: string = "Jeudi";
-  activeDay: string = this.currentDayInLetter
+  activeDay: string = this.currentDayInLetter;
   activeDayInNumber: number =  this.days.indexOf(this.activeDay);
 
   @Input() day: string;
@@ -29,43 +29,42 @@ export class DayComponent implements OnInit {
   menus: Menu[];
   keys: string[];
   orderMenu: Menu[];
-  user: User[]
+  user: User[];
 
-  constructor(private menuService:MenuService ,private userService:UserService, private orderService:OrderService, private router:Router) {
-  }
+  constructor(private menuService: MenuService, private userService: UserService, private orderService: OrderService, private router: Router) { }
 
   ngOnInit() {
     console.log(this.currentDay);
-    if( this.currentDay === 6 || 0) {
-      this.activeDay = 'Lundi'
-      this.activeDayInNumber = this.days.indexOf('Lundi')
+    if ( this.currentDay === 6 || 0) {
+      this.activeDay = 'Lundi';
+      this.activeDayInNumber = this.days.indexOf('Lundi');
     }
-    this.getMenuByDay(this.activeDay)
+    this.getMenuByDay(this.activeDay);
   }
 
   changeDay(day) {
-    this.activeDay = day
+    this.activeDay = day;
     this.activeDayInNumber = this.days.indexOf(day);
-    this.getMenuByDay(day)
+    this.getMenuByDay(day);
   }
 
   getMenuByDay(day: string)
   {
     console.log(day);
-    this.menuService.getMenuByDay(day).subscribe(data =>{
-      let values =  Object.values(data);
-      this.menus = values
-      this.keys = Object.keys(data)
+    this.menuService.getMenuByDay(day).subscribe(data => {
+      const values =  Object.values(data);
+      this.menus = values;
+      this.keys = Object.keys(data);
       console.log(data);
-      
+
       console.log(this.menus[0]);
       console.log(this.keys);
-      
-      
+
+
     }, error => {
       console.log(error);
       this.menus = [];
-      
-    })
+
+    });
   }
 }

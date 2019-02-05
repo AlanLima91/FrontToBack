@@ -13,7 +13,7 @@ export class UserService {
 
 
   /**
-   *  Read all Users 
+   *  Read all Users
    *  return a table of user
    */
   getUsers():Observable<User[]>
@@ -26,7 +26,7 @@ export class UserService {
           catchError(this.handleError('getUsers', []))
         );
   }
-    
+
   /**
    *  Read all Users and look for one user
    *  return a user

@@ -11,10 +11,10 @@ import { User } from '../user';
 })
 export class AdministrationComponent implements OnInit
 {
-  list:any[] = [];
-  menu: any[]
+  list: any[] = [];
+  menu: any[];
 
-  constructor(private orderService:OrderService, private menuService: MenuService) { }
+  constructor(private orderService: OrderService, private menuService: MenuService) { }
 
   ngOnInit()
   {
@@ -23,24 +23,24 @@ export class AdministrationComponent implements OnInit
 
   getOrders()
   {
-    this.orderService.getOrders().subscribe(data =>
-      {
+    this.orderService.getOrders().subscribe(data => {
         this.list = Object.values(data);
-        
         // for(let i = 0; i < cle.length; i++)
         // {
         //   this.list.push({key: cle[i], values:donnees[i]});
         // }
       });
   }
-  getMenu(key) {
+  getMenu(key)
+  {
     this.menuService.getMenuByKey(key).subscribe(data => {
-      this.menu = data
-    })
+      this.menu = data;
+    });
   }
-  deleteOrder(key) {
+  deleteOrder(key)
+  {
     this.orderService.deleteOrder(key).subscribe(data => {
-      this.list[0] = this.list[0].filter(list => list._id !== key)
-    })
+      this.list[0] = this.list[0].filter(list => list._id !== key);
+    });
   }
 }

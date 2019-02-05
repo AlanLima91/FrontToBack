@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
-import { User } from "../user";
-import { Order } from "../order";
+import { User } from '../user';
+import { Order } from '../order';
 
 @Component({
   selector: 'app-profil',
@@ -10,18 +10,16 @@ import { Order } from "../order";
 })
 export class ProfilComponent implements OnInit
 {
-  user:User;
+  user: User;
 
-  constructor(private userService:UserService)
-  {
+  constructor(private userService: UserService) {
 
   }
 
-  ngOnInit()
-  {
-    this.user = this.userService.getUserByKey("-LT7EJHxqq4Zycn7lX36")[0];
+  ngOnInit() {
+    this.user = this.userService.getUserByKey('-LT7EJHxqq4Zycn7lX36')[0];
     console.log(this.user);
-    console.log(this.userService.getUserByKey("-LT7EJHxqq4Zycn7lX36"));
+    console.log(this.userService.getUserByKey('-LT7EJHxqq4Zycn7lX36'));
 
     // function use to add the user (this.user)
     // this.userService.addUser(this.user).subscribe();

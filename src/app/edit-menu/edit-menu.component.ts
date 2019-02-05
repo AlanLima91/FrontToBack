@@ -19,20 +19,20 @@ export class EditMenuComponent implements OnInit {
 
   constructor(private menuService: MenuService, private route: ActivatedRoute, private http: HttpClient, private router: Router) {
     this.route.params
-      .subscribe(params => this.key = params.key)
+      .subscribe(params => this.key = params.key);
   }
 
   ngOnInit() {
     this.getMenuByKey(this.key);
-    console.log(this.menu)
+    console.log(this.menu);
   }
 
   getMenuByKey(key) {
     this.menuService.getMenuByKey(key)
       .subscribe(data => {
-        let value: any = data
-        this.menu = value.menu;  //0 Firebase send an array 
-        console.log(this.menu)
+        let value: any = data;
+        this.menu = value.menu;  // 0 Firebase send an array
+        console.log(this.menu);
       });
   }
 

@@ -13,12 +13,12 @@ export class AddMenuComponent implements OnInit {
 
   @Input() day: string;
 
-  constructor(private router:Router, private menuService: MenuService) { }
+  constructor(private router: Router, private menuService: MenuService) { }
 
   ngOnInit() {
   }
 
-  onSubmit(form){
+  onSubmit(form) {
     this.menuService.addMenu(form.form.value)
       .subscribe(menu => {
         this.router.navigate([`./`]);

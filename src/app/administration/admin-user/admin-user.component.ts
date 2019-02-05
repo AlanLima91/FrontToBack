@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { UserService } from "../../services/user.service";
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-admin-user',
@@ -8,21 +8,22 @@ import { UserService } from "../../services/user.service";
 })
 export class AdminUserComponent implements OnInit {
   @Input() key;
-  user
+  user;
 
 
   constructor(private userService: UserService) { }
 
   ngOnInit() {
     console.log(this.key);
-    
-    this.getUser(this.key)
+
+    this.getUser(this.key);
   }
 
-  getUser(key) {
+  getUser(key)
+  {
     this.userService.getUserByKey(key).subscribe(data => {
-      this.user = data
-    })
+      this.user = data;
+    });
   }
 
 }
