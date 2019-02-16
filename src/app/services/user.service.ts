@@ -18,7 +18,7 @@ export class UserService {
    */
   getUsers():Observable<User[]>
   {
-    return this.http.get<User[]>('http://localhost:8000/users')
+    return this.http.get<User[]>('http://aston.maquette-potion-mediatique.com/users')
         .pipe(
           tap(data => {
             data
@@ -33,7 +33,7 @@ export class UserService {
    */
   getUserByKey(key: string): Observable<User[]>
   {
-    return this.http.get<User[]>('http://localhost:8000/users/'+key)
+    return this.http.get<User[]>('http://aston.maquette-potion-mediatique.com/users/'+key)
     .pipe(
       tap(data => data),
       catchError(this.handleError('getUserByKey', []))
@@ -46,11 +46,11 @@ export class UserService {
    */
   addUser(user: User): Observable<User>
   {
-    let url = `http://localhost:8000/users`;
+    let url = `http://aston.maquette-potion-mediatique.com/users`;
     // , {responseType: 'json'}
     return this.http.post<User>(url, user, {responseType: 'json'}).pipe(
         tap((product: User) => console.log('User Added')),
-        catchError(this.handleError<User>('addBeer')),
+        catchError(this.handleError<User>('addUser')),
       );
   }
 

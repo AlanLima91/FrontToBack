@@ -5,7 +5,7 @@ import { tap, catchError, filter } from 'rxjs/operators';
 import { Menu } from '../menu';
 import axios from 'axios';
 
-const url = 'http://localhost:8000';
+const url = 'http://aston.maquette-potion-mediatique.com/';
 @Injectable({
   providedIn: 'root'
 })
@@ -23,7 +23,7 @@ export class MenuService {
     //   console.log(result);
     //   return result;
     // })
-    return this.http.get<Menu[]>('http://localhost:8000/menus')
+    return this.http.get<Menu[]>('http://aston.maquette-potion-mediatique.com/menus')
         .pipe(
           tap(data => ( {
             data
@@ -51,7 +51,7 @@ export class MenuService {
    */
   addMenu(menu: Menu): Observable<Menu>
   {
-    let url = `http://localhost:8000/menus`;
+    let url = `http://aston.maquette-potion-mediatique.com/menus`;
     // , {responseType: 'json'}
     return this.http.post<Menu>(url, menu, {responseType: 'json'}).pipe(
         tap((product: Menu) => console.log('menu added')),
@@ -61,11 +61,11 @@ export class MenuService {
    //** Read menus by day */
 
   getMenuByDay(day: string): Observable<Menu[]>{
-    return this.http.get<Menu[]>('http://localhost:8000/menus/day='+day);
+    return this.http.get<Menu[]>('http://aston.maquette-potion-mediatique.com/menus/day='+day);
   }
 
   getMenuByKey(key: string): Observable<Menu[]>{
-    return this.http.get<Menu[]>('http://localhost:8000/menus/'+key)
+    return this.http.get<Menu[]>('http://aston.maquette-potion-mediatique.com/menus/'+key)
     .pipe(
       tap(data => data),
       catchError(this.handleError('getBeerByKey', []))
@@ -74,7 +74,7 @@ export class MenuService {
 
 
   editMenu(menu: Menu, key: string): Observable<Menu> {
-    const url = `http://localhost:8000/menus/`+key;
+    const url = `http://aston.maquette-potion-mediatique.com/menus/`+key;
     return this.http.patch<Menu>(url, menu, {responseType: 'json'}).pipe(
       tap((product: Menu) => console.log('menu edited')),
       catchError(this.handleError<Menu>('addMenu'))

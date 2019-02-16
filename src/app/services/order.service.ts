@@ -19,7 +19,7 @@ export class OrderService {
    */
   getOrders():Observable<Order[]>
   {
-    return this.http.get<Order[]>('http://localhost:8000/orders')
+    return this.http.get<Order[]>('http://aston.maquette-potion-mediatique.com/orders')
         .pipe(
           tap(data => {
             data
@@ -34,7 +34,7 @@ export class OrderService {
    */
   addOrder(order: Order): Observable<Order>
   {
-    let url = `http://localhost:8000/orders`;
+    let url = `http://aston.maquette-potion-mediatique.com/orders`;
     // , {responseType: 'json'}
     return this.http.post<Order>(url, order, {responseType: 'json'}).pipe(
         tap((product: Order) => console.log('order Added')),
@@ -44,14 +44,14 @@ export class OrderService {
 
   /** DELETE: delete one beer */
   deleteOrder(key: string): Observable<Order>{
-    let url = `http://localhost:8000/orders/`+key;
+    let url = `http://aston.maquette-potion-mediatique.com/orders/`+key;
     return this.http.delete<Order>(url)
       .pipe(
         tap(data=>data),
         catchError(this.handleError<Order>('deleteBeer'))
       );
   }
-  
+
    /**
    * Handle Http operation that failed.
    * Let the app continue.

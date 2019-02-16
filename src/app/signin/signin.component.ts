@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { UserService } from '../services/user.service';
+import { User } from '../user';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-signin',
@@ -7,9 +12,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SigninComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private userService: UserService) { }
 
   ngOnInit() {
+  }
+ signin(form: NgForm){
+    console.log(form.value);
+
   }
 
 }
