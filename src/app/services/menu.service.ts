@@ -72,6 +72,10 @@ export class MenuService {
     );
   }
 
+    /**
+   *  // PUT :  Edit a MENU
+   *  @param menu
+   */
 
   editMenu(menu: Menu, key: string): Observable<Menu> {
     const url = `url/menus/` + key;
