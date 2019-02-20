@@ -6,8 +6,8 @@
     <a [routerLink]="['/connexion']" class="col-2 text-center text-uppercase text-white mt-3 mb-3">Connexion</a>
     <a [routerLink]="['/inscription']" class="col-2 text-center text-uppercase text-white mt-3 mb-3">Inscription</a>
 </nav> -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-green">
-  <ul class="navbar-nav mr-auto">
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-green">
+   <ul class="navbar-nav mr-auto">
       <li class="nav-item">
           <a [routerLink]="['/']" class="col-2 text-center text-uppercase text-white mt-3 mb-3 menu-hover">Menu</a>
       <li>
@@ -43,6 +43,35 @@
           </li>
       </ul>
   </div>
-</nav>
+</nav> -->
 
+<nav class="navbar navbar-expand-lg navbar-dark bg-green">
+  <a class="navbar-brand" href="#">Stone food</a>
+
+  <button class="navbar-toggler" type="button"
+          (click)="toggleNavbar()">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse show" id="navbarNavAltMarkup"
+      [ngClass]="{ 'show': navbarOpen }">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item nav-link">
+          <a class="col-2 text-center text-uppercase text-white mt-2 mb-2 menu-hover" routerLink="/">Menu</a>
+        </li>
+        <li class="nav-item nav-link">
+          <a class=" col-2 text-center text-uppercase text-white mt-2 mb-2 menu-hover" routerLink="/panier">Panier</a>
+        </li>
+        <li class="nav-item nav-link">
+          <a class="col-2 text-center text-uppercase text-white mt-2 mb-2 menu-hover" routerLink="/administration">administration</a>
+        </li>
+        <li class="nav-item nav-link">
+          <a class="col-2 text-center text-uppercase text-white mt- mb-2 menu-hover" routerLink="//connexion">connexion</a>
+        </li>
+        <li class="nav-item nav-link">
+          <a class="col-2 text-center text-uppercase text-white mt-3 mb-2 menu-hover" routerLink="/inscription">inscription</a>
+        </li>
+      </ul>
+  </div>
+</nav>
 <router-outlet></router-outlet>

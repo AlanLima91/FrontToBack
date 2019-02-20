@@ -11,7 +11,7 @@ import {Menu} from '../menu';
 })
 export class AddMenuComponent implements OnInit {
 
-  @Input() day: string;
+  // @Input() day: string;
 
   constructor(private router: Router, private menuService: MenuService) { }
 

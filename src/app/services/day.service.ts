@@ -9,7 +9,7 @@ export class DayService {
   currentDay: number = new Date().getDay();
   currentDayInLetter: string = this.days[this.currentDay - 1];
   // activeDay: string = "Jeudi";
-  activeDay: string = this.currentDayInLetter
+  activeDay: string = this.currentDayInLetter;
   activeDayInNumber: number =  this.days.indexOf(this.activeDay);
 
   constructor() { }
@@ -18,7 +18,7 @@ export class DayService {
     console.log(day);
 
     this.activeDay = day;
-    this.activeDayInNumber=  this.days.indexOf(this.activeDay);
+    this.activeDayInNumber = this.days.indexOf(this.activeDay);
 
     console.log(this.activeDay);
 
