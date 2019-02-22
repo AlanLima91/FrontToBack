@@ -1,5 +1,8 @@
 import { Order } from './order';
 
+import { Type } from '@angular/compiler';
+import { Menu } from './menu';
+
 export class User
 {
     public _id          :string
@@ -10,7 +13,7 @@ export class User
     public admin       :boolean;
     public orderKeys   :string;
     public solde       :number;
-    
+
     constructor(_id: string, name:string, firstname:string, email:string, password:string, admin:boolean, orderKeys: string, solde:number)
     {
         this._id         = _id

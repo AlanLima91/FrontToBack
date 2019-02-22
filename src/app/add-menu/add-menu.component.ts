@@ -21,9 +21,18 @@ export class AddMenuComponent implements OnInit {
   onSubmit(form) {
     this.menuService.addMenu(form.form.value)
       .subscribe(menu => {
-        this.router.navigate([`./`]);
+        this.router.navigate([`/`]);
       });
   }
+
+  // add(name: string): void {
+  //   name = name.trim();
+  //   if (!name) { return; }
+  //   this.menuService.addMenu({ name } as Menu)
+  //     .subscribe(hero => {
+  //       this.router.navigate([`./`]);
+  //     });
+  // }
 
 
 }

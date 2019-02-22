@@ -1,30 +1,30 @@
 
-
+<!-- Menu du jour -->
 <div class="container p-5">
   <h2 class="text-center pb-5">MENU DU JOUR</h2>
 
   <div class="container">
     <div class="row h-100">
-      <div 
-        class="col-8 h-100 d-inline-block"
-        >
-        <div 
-          class="b-5 p-3" 
+     <div class="col-8 h-100 d-inline-block">
+        <div
+          class="b-5 p-3"
           [ngClass]="{'today': activeDay === currentDayInLetter, 'past': activeDayInNumber < currentDay-1 }">
-          
+
         <button class="btn-primary test" [routerLink]="['/menu/add']">ajouter</button>
           <h2 class="text-center"> {{ activeDay }} </h2>
           <div class="row">
           </div>
           <div class="row">
-            <ng-container
-              *ngIf='menus'>
-              <app-single-menu 
-                class="col-4 text-center" 
-                *ngFor="let menu of menus[0]"
-                [menu]= "menu">
-              </app-single-menu>
-            </ng-container>
+            <!-- <ng-container
+              *ngIf='menus'> -->
+              <!-- class="col-4 text-center"
+              *ngFor="let menu of menus"
+              [menu]= "menu"> -->
+              <app-single-menu></app-single-menu>
+              <app-single-menu></app-single-menu>
+              <app-single-menu></app-single-menu>
+
+            <!-- </ng-container> -->
           </div>
         </div>
       </div>
@@ -37,4 +37,4 @@
       </div>
     </div>
   </div>
-</div> 
+</div>
