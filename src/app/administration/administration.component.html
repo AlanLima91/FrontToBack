@@ -15,8 +15,10 @@ et de boucler sur un objet qui contiendra toutes les infos necessaire -->
         <!-- en dessous insérer le menu choisit contenu dans l'objet -->
         <div class="col-4 row">
             <app-menu [key]="key" *ngFor="let key of order?.menuKeys" class="col-6"></app-menu>
+            <!-- <app-menu></app-menu> -->
         </div>
         <!-- en dessous insérer le client contenu dans l'objet -->
+        <!-- <app-admin-user [key]="order?.userKey" class="col-4"></app-admin-user> -->
         <app-admin-user [key]="order?.userKey" class="col-4"></app-admin-user>
         <button class="btn-delete" (click)="deleteOrder(order?._id)">X</button>
       </li>
