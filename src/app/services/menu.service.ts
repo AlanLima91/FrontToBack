@@ -46,7 +46,7 @@ export class MenuService {
   // }
 
   /**
-   *  Add a new User to the table
+   *  POST : Add a new User to the table
    *  @param menu
    */
   addMenu(menu: Menu): Observable<Menu>
@@ -60,14 +60,14 @@ export class MenuService {
    //** Read menus by day */
   // url/menus/day='+day
   getMenuByDay(day: string): Observable<Menu[]>{
-    return this.http.get<Menu[]>(url + 'menus' +'/'+ 'day=' + 'day');
+    return this.http.get<Menu[]>(url + 'menus' + '/' + 'day=' + 'day');
   }
   // 'url/menus/'
   getMenuByKey(key: string): Observable<Menu[]>{
     return this.http.get<Menu[]>(url + 'menus' + key)
     .pipe(
       tap(data => data),
-      catchError(this.handleError('getBeerByKey', []))
+      catchError(this.handleError('getMenuByKey', []))
     );
   }
 
@@ -77,8 +77,8 @@ export class MenuService {
    */
 
   editMenu(menu: Menu, key: string): Observable<Menu> {
-    const url = `url + 'menus'` + key;
-    return this.http.patch<Menu>(url, menu, {responseType: 'json'}).pipe(
+    let url = `http://aston.maquette-potion-mediatique.com/menus/` + key   ;
+    return this.http.put<Menu>(url, menu, {responseType: 'json'}).pipe(
       tap((product: Menu) => console.log('menu edited')),
       catchError(this.handleError<Menu>('addMenu'))
     );
