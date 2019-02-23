@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { User } from '../user';
+import { Observable, Subject } from 'rxjs';
 
 
 @Component({
@@ -11,6 +12,7 @@ import { User } from '../user';
 export class ListUserComponent implements OnInit
 {
   list: any[] = [];
+  users$: Observable<User[]>;
   solde:number = 0;
 
   constructor(private userService: UserService) { }
@@ -24,8 +26,8 @@ export class ListUserComponent implements OnInit
   getUsers()
   {
     this.userService.getUsers().subscribe(data => {
-        const cle = Object.keys(data);
-        const donnees = Object.values(data);
+        let cle = Object.keys(data);
+        let donnees = Object.values(data);
         for (let i = 0; i < cle.length; i++) {
           this.list.push({key: cle[i], values: donnees[i]});
         }

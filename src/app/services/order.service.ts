@@ -44,7 +44,7 @@ export class OrderService {
 
   /** DELETE: delete one beer */
   deleteOrder(key: string): Observable<Order>{
-    let url = `http://aston.maquette-potion-mediatique.com/orders/`+key;
+    let url = `http://aston.maquette-potion-mediatique.com/orders/` + key;
     return this.http.delete<Order>(url)
       .pipe(
         tap(data=>data),

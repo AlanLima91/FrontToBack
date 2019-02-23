@@ -18,13 +18,13 @@ export class SingleMenuComponent implements OnInit {
   @Input() menu: Menu;
 
   orderMenu: [string];
-  user: User
+  user: User;
 
-  constructor(private menuService:MenuService ,private userService:UserService, private orderService:OrderService, private router:Router) { }
+  constructor(private menuService:MenuService, private userService:UserService, private orderService:OrderService, private router:Router) { }
 
   ngOnInit() {
     console.log(this.menu);
-    
+
   }
 
   Order(key: string) {
@@ -46,7 +46,7 @@ export class SingleMenuComponent implements OnInit {
           price: 7
         }
         console.log(order);
-        
+
         this.orderService.addOrder(order).subscribe( data => {
           this.router.navigate([`./`])
         })

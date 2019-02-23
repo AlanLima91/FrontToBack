@@ -23,7 +23,7 @@ export class MenuService {
     //   console.log(result);
     //   return result;
     // })
-    return this.http.get<Menu[]>('http://aston.maquette-potion-mediatique.com/menus')
+    return this.http.get<Menu[]>(url + 'menus')
         .pipe(
           tap(data => ( {
             data
@@ -46,36 +46,39 @@ export class MenuService {
   // }
 
   /**
-   *  Add a new User to the table
+   *  POST : Add a new User to the table
    *  @param menu
    */
   addMenu(menu: Menu): Observable<Menu>
   {
-    let url = `http://aston.maquette-potion-mediatique.com/menus`;
-    // , {responseType: 'json'}
+    let url = `http://aston.maquette-potion-mediatique.com/menus/`;
     return this.http.post<Menu>(url, menu, {responseType: 'json'}).pipe(
         tap((product: Menu) => console.log('menu added')),
-        catchError(this.handleError<Menu>('addMenu')),
+        catchError(this.handleError<Menu>('addMenu'))
       );
   }
    //** Read menus by day */
-
+  // url/menus/day='+day
   getMenuByDay(day: string): Observable<Menu[]>{
-    return this.http.get<Menu[]>('http://aston.maquette-potion-mediatique.com/menus/day='+day);
+    return this.http.get<Menu[]>(url + 'menus' + '/' + 'day=' + 'day');
   }
-
+  // 'url/menus/'
   getMenuByKey(key: string): Observable<Menu[]>{
-    return this.http.get<Menu[]>('http://aston.maquette-potion-mediatique.com/menus/'+key)
+    return this.http.get<Menu[]>(url + 'menus' + key)
     .pipe(
       tap(data => data),
-      catchError(this.handleError('getBeerByKey', []))
+      catchError(this.handleError('getMenuByKey', []))
     );
   }
 
+    /**
+   *  // PUT :  Edit a MENU
+   *  @param menu
+   */
 
   editMenu(menu: Menu, key: string): Observable<Menu> {
-    const url = `http://aston.maquette-potion-mediatique.com/menus/`+key;
-    return this.http.patch<Menu>(url, menu, {responseType: 'json'}).pipe(
+    let url = `http://aston.maquette-potion-mediatique.com/menus/` + key   ;
+    return this.http.put<Menu>(url, menu, {responseType: 'json'}).pipe(
       tap((product: Menu) => console.log('menu edited')),
       catchError(this.handleError<Menu>('addMenu'))
     );
