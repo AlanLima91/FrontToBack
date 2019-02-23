@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import {throwError as observableThrowError,  Observable } from 'rxjs';
 import { tap, catchError, filter } from 'rxjs/operators';
 import { User } from '../user';
@@ -52,6 +52,14 @@ export class UserService {
         tap((product: User) => console.log('User Added')),
         catchError(this.handleError<User>('addUser')),
       );
+  }
+
+  loginUser(user: User): Observable<HttpResponse<Object>>
+  {
+    return this.http.post<HttpResponse<Object>>('http://aston.maquette-potion-mediatique.com/users/login', user, {
+      observe: 'response' as 'body',
+      responseType: 'json'
+    });
   }
 
 

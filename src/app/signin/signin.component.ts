@@ -16,9 +16,29 @@ export class SigninComponent implements OnInit {
 
   ngOnInit() {
   }
- signin(form: NgForm){
-    console.log(form.value);
 
+  onSubmit(form)
+  {
+    console.log(form)
+    let user = new User(
+      form.form.value._id,
+      form.form.value.name,
+      form.form.value.firstname,
+      form.form.value.email,
+      form.form.value.password,
+      false,
+      null, // Order
+      0     //solde
+    );
+    this.userService.loginUser(user).subscribe(resp => {
+        console.log(resp.headers.get("X-Auth"))
+        console.log(resp)
+        localStorage.setItem("X-Auth", resp.headers.get("X-Auth"))
+        this.router.navigate([`./`])
+      },
+      err => {
+        this.router.navigate([`./connexion`])
+      });
   }
 
 }

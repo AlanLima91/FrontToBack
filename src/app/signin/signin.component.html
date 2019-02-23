@@ -4,21 +4,24 @@
     <div class="row">
       <div class="col-10 p-5 center text-uppercase boxstyle">
         <h1 class="center">Connexion</h1>
-        <div class="row">
-          <div class="col-12 p-3 center">
-            <input type="email" name="email" ngModel id="email" placeholder="Votre Email" #emailInput="ngModel" class="field_input">
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+
+          <div class="row">
+            <div class="col-12 p-3 center">
+              <input type="email" name="email" ngModel id="email" placeholder="Votre Email" #emailInput="ngModel" class="field_input">
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-12 p-3 center">
-            <input type="password" name="password" ngModel id="password" #passwordInput="ngModel" placeholder="Mot de passe" class="field_input">
+          <div class="row">
+            <div class="col-12 p-3 center">
+              <input type="password" name="password" ngModel id="password" #passwordInput="ngModel" placeholder="Mot de passe" class="field_input">
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-12 center">
-            <button class="btn">connexion</button>
+          <div class="row">
+            <div class="col-12 center">
+              <button type="submit"  class="btn">connexion</button>
+            </div>
           </div>
-        </div>
+        </form>
         <div class="row" style="margin-top: 20px;">
           <a [routerLink]="['/resetPassword']" class="clickable">
             Mot de passe oublié ?
