@@ -4,7 +4,8 @@ import { Type } from '@angular/compiler';
 
 export class Menu
 {
-    // public _id: string;
+    public _id: string;
+    public key: string;
     public name: string;
     public entree: string;
     public plat: string;
@@ -12,8 +13,10 @@ export class Menu
     public day: string;
     public price: number;
 
-    constructor(name: string, entree: string, plat: string, dessert: string, day: string, price: number)
+    constructor(key: string, _id: string, name: string, entree: string, plat: string, dessert: string, day: string, price: number)
     {
+        this._id        = _id;
+        this.key        = key;
         this.name       = name;
         this.entree     = entree;
         this.plat       = plat;

@@ -11,7 +11,8 @@ import {Menu} from '../menu';
 })
 export class AddMenuComponent implements OnInit {
 
-  @Input() day: string;
+  @Input()
+  day: string;
 
   constructor(private router: Router, private menuService: MenuService) { }
 
@@ -21,7 +22,7 @@ export class AddMenuComponent implements OnInit {
   onSubmit(form) {
     this.menuService.addMenu(form.form.value)
       .subscribe(menu => {
-        this.router.navigate([`/`]);
+        this.router.navigate([`./`]);
       });
   }
 
