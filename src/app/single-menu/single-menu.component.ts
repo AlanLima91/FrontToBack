@@ -22,7 +22,7 @@ export class SingleMenuComponent implements OnInit {
   orderMenu: [string];
   user: User;
 
-  constructor(private menuService:MenuService, private userService:UserService, private orderService:OrderService, private router:Router, activatedRoute: ActivatedRoute) {
+  constructor(private menuService:MenuService, private userService:UserService, private orderService:OrderService, private router:Router) {
 
   }
 
